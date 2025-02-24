@@ -1,8 +1,15 @@
 'use client'
-import {
-  ThemeProvider as MaterialThemeProvider,
-  createTheme
-} from '@mui/material/styles'
+import { createTheme } from '@mui/material/styles'
+import { Cedarville_Cursive, Roboto_Serif } from 'next/font/google'
+const roboto = Roboto_Serif({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin'],
+  display: 'swap'
+})
+export const cursive = Cedarville_Cursive({
+  weight: '400',
+  subsets: ['latin']
+})
 const theme = createTheme({
   components: {
     MuiCssBaseline: {
@@ -28,13 +35,11 @@ const theme = createTheme({
     }
   },
   typography: {
-    fontFamily: 'Arial, Helvetica, sans-serif',
+    fontFamily: roboto.style.fontFamily,
     body2: {
-      fontFamily: 'marck script, cursive'
+      fontFamily: cursive.style.fontFamily
     }
   }
 })
 
-export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  return <MaterialThemeProvider theme={theme}>{children}</MaterialThemeProvider>
-}
+export default theme

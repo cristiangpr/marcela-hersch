@@ -1,24 +1,27 @@
-import type { Metadata } from 'next'
-import { ThemeProvider } from './providers/ThemeProvider'
+import * as React from 'react'
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter'
-import './globals.css'
+import { ThemeProvider } from '@mui/material/styles'
+import CssBaseline from '@mui/material/CssBaseline'
+import theme from '@/theme'
+import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
+import { Box } from '@mui/material'
 
-export const metadata: Metadata = {
-  title: 'Marcela Hersch',
-  description: 'Pianista y Compositora'
-}
-
-export default function RootLayout({
-  children
-}: Readonly<{
-  children: React.ReactNode
-}>) {
+export default function RootLayout(props: { children: React.ReactNode }) {
   return (
-    <html lang="en">
-      <body style={{ backgroundColor: 'rgb(251,241,236)' }}>
-        <ThemeProvider>
-          <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <InitColorSchemeScript attribute="class" />
+        <AppRouterCacheProvider options={{ enableCssLayer: true }}>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline />
+            <Header />
+            <main style={{ flexGrow: 1 }}>{props.children}</main>
+            <Footer />
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   )
