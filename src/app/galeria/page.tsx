@@ -2,7 +2,7 @@
 import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 
-export default function Home() {
+export default function Prensa() {
   return (
     <Box
       sx={{

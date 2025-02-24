@@ -50,7 +50,7 @@ export default function Header() {
       title: 'Galería',
       items: [
         { name: 'Fotos', path: '/galeria/fotos' },
-        { name: 'Carteles de presentacion', path: '/galeria/carteles' },
+
         { name: 'Prensa', path: '/galeria/prensa' }
       ]
     },

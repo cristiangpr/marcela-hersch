@@ -30,6 +30,9 @@ const theme = createTheme({
       primary: 'rgb(129,127,115)',
       disabled: 'rgb(151, 146, 113)'
     },
+    primary: {
+      main: 'rgb(151, 146, 113)'
+    },
     action: {
       active: '#001E3C'
     }

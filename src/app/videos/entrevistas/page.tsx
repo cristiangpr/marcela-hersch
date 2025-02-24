@@ -3,7 +3,7 @@ import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
-import { getYouTubeEmbedUrls } from '@/utils/functions'
+import { cleanFileName, getYouTubeEmbedUrls } from '@/utils/functions'
 
 const urls: string[] = [
   'https://youtu.be/s3XAR8pwhdw?si=cGxJb97f7_RYivHp',
@@ -12,7 +12,8 @@ const urls: string[] = [
   'https://youtu.be/aiBcISX9kYQ',
   'https://youtu.be/d05buTTBZn4',
   'https://youtu.be/emjjvqja-qA',
-  'https://youtu.be/iHA72PFuBcE'
+  'https://youtu.be/iHA72PFuBcE',
+  'https://youtu.be/Nz29Qe6pSWU'
 ]
 
 // This is a Server Component, it runs server-side.
@@ -89,7 +90,7 @@ export default async function Entrevistas() {
                   padding={2}
                 >
                   <Typography variant="h6" color="text.disabled">
-                    {names[index]}
+                    {cleanFileName(names[index])}
                   </Typography>
                   <audio controls>
                     <source src={url} type="audio/mpeg" />

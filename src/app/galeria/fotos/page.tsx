@@ -46,20 +46,14 @@ export default async function Galeria() {
                 textAlign="center"
                 key={url}
                 size={
-                  index === 0 || index === 3
-                    ? 5
-                    : index === 1 || index === 2
-                    ? 7
-                    : index === 4 && index <= 7
-                    ? 6
-                    : index === 8 || index === 9
-                    ? 12
-                    : 6
+                  index === 24 || index === 25 || index === 29 || index === 30
+                    ? { xs: 12, md: 6 }
+                    : { xs: 12, md: 6, lg: 4 }
                 }
                 padding={1}
               >
                 <Image
-                  key={index}
+                  key={url}
                   src={url}
                   alt={`Image ${index}`}
                   style={{

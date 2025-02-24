@@ -9,3 +9,9 @@ export const getYouTubeEmbedUrls = (urls: string[]): string[] => {
     return url
   })
 }
+
+export function cleanFileName(filename: string): string {
+  return filename
+    .replace(/\.[^.]+$/, '') // Remove file extension
+    .replace(/_/g, ' ') // Replace underscores with spaces
+}
