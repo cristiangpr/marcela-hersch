@@ -37,7 +37,7 @@ export default async function Galeria() {
         }}
       >
         <Typography variant="h4">Galeria</Typography>
-        <Grid container justifyContent="center" sx={{ pointerEvents: 'none' }}>
+        <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>
               <Grid
