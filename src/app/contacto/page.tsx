@@ -1,4 +1,5 @@
 import Form from '@/components/Form'
+import Paola from '@/components/Paola'
 import { Container, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
@@ -34,13 +35,14 @@ export default function Contacto() {
             alignItems: 'stretch' // Add this
           }}
         >
-          <Stack spacing={3}>
+          <Stack spacing={1}>
             <Image
               width={400}
               height={550}
               alt="image"
               src={'/contacto.avif'}
             />
+            <Paola />
           </Stack>
           <Box
             sx={{

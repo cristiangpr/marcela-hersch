@@ -1,3 +1,4 @@
+import Paola from '@/components/Paola'
 import { Container, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
@@ -17,9 +18,10 @@ export default function Venta() {
           Ecucha en tu plataforma favorita
         </Typography>
         <Box display="flex" justifyContent="center" width="80%" paddingTop={5}>
-          <Box>
+          <Stack spacing={1}>
             <Image width={600} height={450} alt="image" src={'/venta.avif'} />
-          </Box>
+            <Paola />
+          </Stack>
 
           <Box
             sx={{

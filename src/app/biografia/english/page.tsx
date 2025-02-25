@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+import Paola from '@/components/Paola'
 import { Container, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
@@ -47,8 +48,9 @@ export default function English() {
             alignItems: 'stretch' // Add this
           }}
         >
-          <Stack spacing={3}>
+          <Stack spacing={1}>
             <Image width={400} height={550} alt="image" src={'/english.avif'} />
+            <Paola />
           </Stack>
           <Box
             sx={{
