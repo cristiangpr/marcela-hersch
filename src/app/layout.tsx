@@ -6,7 +6,6 @@ import theme from '@/theme'
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
-import { Box } from '@mui/material'
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
