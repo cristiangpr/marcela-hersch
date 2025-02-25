@@ -28,17 +28,13 @@ export default async function Programa() {
   })
 
   return (
-    <Box
-      paddingBottom={10}
-      sx={{ bgcolor: 'background.default', width: '100%' }}
+    <Container
+      maxWidth="lg"
+      sx={{
+        bgcolor: 'background.default'
+      }}
     >
-      <Container
-        sx={{
-          bgcolor: 'background.default',
-          textAlign: 'center',
-          paddingTop: [5]
-        }}
-      >
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         <Typography variant="h4">Homenaje a Beethoven</Typography>
         <Grid container justifyContent="center">
           {imageUrls &&
@@ -67,7 +63,7 @@ export default async function Programa() {
               </>
             ))}
         </Grid>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   )
 }

@@ -39,17 +39,13 @@ export default async function Beethoven() {
   ]
 
   return (
-    <Box
-      paddingBottom={10}
-      sx={{ bgcolor: 'background.default', width: '100%' }}
+    <Container
+      maxWidth="lg"
+      sx={{
+        bgcolor: 'background.default'
+      }}
     >
-      <Container
-        sx={{
-          bgcolor: 'background.default',
-          textAlign: 'center',
-          paddingTop: [5]
-        }}
-      >
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         <Typography variant="h4">Homenaje a Beethoven</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
@@ -60,7 +56,7 @@ export default async function Beethoven() {
                 textAlign="center"
                 key={url}
                 size={4}
-                padding={5}
+                padding={2}
               >
                 <Stack>
                   <Typography variant="h5" color="text.disabled">
@@ -86,7 +82,7 @@ export default async function Beethoven() {
             </>
           ))}
         </Grid>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   )
 }

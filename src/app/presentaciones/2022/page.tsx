@@ -57,17 +57,13 @@ export default async function VeintidosPage() {
   ]
 
   return (
-    <Box
-      paddingBottom={10}
-      sx={{ bgcolor: 'background.default', width: '100%' }}
+    <Container
+      maxWidth="lg"
+      sx={{
+        bgcolor: 'background.default'
+      }}
     >
-      <Container
-        sx={{
-          bgcolor: 'background.default',
-          textAlign: 'center',
-          paddingTop: [5]
-        }}
-      >
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         <Typography variant="h4">Presentaciones en 2022</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
@@ -78,7 +74,7 @@ export default async function VeintidosPage() {
                 textAlign="center"
                 key={url}
                 size={index == 0 || index === 3 ? 6 : 4}
-                padding={5}
+                padding={3}
               >
                 <Stack>
                   <Typography variant="h5" color="text.disabled">
@@ -104,7 +100,7 @@ export default async function VeintidosPage() {
             </>
           ))}
         </Grid>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   )
 }

@@ -15,7 +15,8 @@ export default function PortadaTesis() {
           display: 'flex',
           flexDirection: 'column',
           paddingX: 8,
-          paddingY: 4,
+          paddingTop: 4,
+          paddingBottom: 0,
           gap: 1,
           width: '100%',
           flex: 1,
@@ -39,13 +40,13 @@ export default function PortadaTesis() {
           flexDirection: 'column',
           paddingX: 8,
           paddingY: 0,
-          gap: 1,
+
           width: '100%',
           flex: 1,
-          alignItems: 'right'
+          textAlign: 'right'
         }}
       >
-        <Typography variant="body1">
+        <Typography fontSize={'0.8rem'} variant="body1">
           Cuernavaca, Morelos, 12 de enero de 2017 <br /> Colegio de Morelos
           COLMOR
         </Typography>
@@ -86,8 +87,9 @@ export default function PortadaTesis() {
             sx={{
               borderRight: '4px solid',
               borderColor: 'divider',
-              margin: 2,
-              width: { xs: '100%', md: '50%' }
+              marginX: 2,
+              width: { xs: '100%', md: '50%' },
+              height: 800
             }}
           />
           <Image width={600} height={800} alt="image" src={'/tesis-1.avif'} />

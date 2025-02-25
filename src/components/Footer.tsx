@@ -8,8 +8,13 @@ export default function Footer() {
       height={50}
       bgcolor="background.paper"
       position={'relative'}
+      display={'flex'}
+      alignItems={'center'}
+      justifyContent={'center'}
     >
-      <Typography>2021 Marcela Hersch todos los derechos reservados</Typography>
+      <Typography fontSize={'0.8rem'}>
+        © 2021 Marcela Hersch. ® Todos los derechos reservados
+      </Typography>
     </Box>
   )
 }

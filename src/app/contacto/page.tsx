@@ -11,11 +11,15 @@ export default function Contacto() {
         bgcolor: 'background.default'
       }}
     >
+      <Box paddingX={8} sx={{ textAlign: 'left', mt: 4 }}>
+        <Typography variant="h3">Contacto</Typography>
+      </Box>
       <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           padding: 8,
+
           gap: 4,
           width: '100%',
           flex: 1
@@ -31,7 +35,6 @@ export default function Contacto() {
           }}
         >
           <Stack spacing={3}>
-            <Typography variant="h3">Contacto</Typography>
             <Image
               width={400}
               height={550}
@@ -43,12 +46,14 @@ export default function Contacto() {
             sx={{
               borderRight: '4px solid',
               borderColor: 'divider',
-              margin: 2, // margin-left for spacing
+              marginX: 2, // margin-left for spacing
               display: { xs: 'none', md: 'block' } // Hide on mobile
             }}
           />
         </Box>
-        <Form />
+        <Box>
+          <Form />
+        </Box>
       </Box>
     </Container>
   )

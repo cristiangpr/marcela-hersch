@@ -14,8 +14,25 @@ export default function English() {
       <Box
         sx={{
           display: 'flex',
+          flexDirection: 'column',
+          paddingX: 8,
+          paddingTop: 2,
+
+          paddingBottom: 2,
+          gap: 1,
+          width: '100%',
+          flex: 1,
+          alignItems: 'left'
+        }}
+      >
+        {' '}
+        <Typography variant="h4">English</Typography>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
-          padding: 8,
+          paddingX: 8,
           gap: 4,
           width: '100%',
           flex: 1
@@ -31,7 +48,6 @@ export default function English() {
           }}
         >
           <Stack spacing={3}>
-            <Typography variant="h3">English</Typography>
             <Image width={400} height={550} alt="image" src={'/english.avif'} />
           </Stack>
           <Box

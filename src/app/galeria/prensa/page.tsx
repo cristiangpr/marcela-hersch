@@ -22,21 +22,13 @@ export default async function Prensa() {
   })
 
   return (
-    <Box
-      paddingBottom={10}
-      paddingTop={5}
-      textAlign={'center'}
+    <Container
+      maxWidth="lg"
       sx={{
-        bgcolor: 'bacground.default',
-        width: '100%'
+        bgcolor: 'background.default'
       }}
     >
-      <Container
-        sx={{
-          bgcolor: 'bacground.default'
-        }}
-        maxWidth="lg"
-      >
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         {' '}
         <Typography variant="h2">Prensa</Typography>
         <Box
@@ -182,7 +174,7 @@ export default async function Prensa() {
             />
           </Stack>
         </Box>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   )
 }

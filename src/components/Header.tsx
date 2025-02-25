@@ -21,7 +21,7 @@ export default function Header() {
     {
       title: 'Biografia',
       items: [
-        { name: 'Espanol', path: '/biografia/espanol' },
+        { name: 'Español', path: '/biografia/espanol' },
         { name: 'English', path: '/biografia/english' }
       ]
     },
@@ -90,7 +90,7 @@ export default function Header() {
             <Stack spacing={2}>
               <Typography
                 variant="subtitle1"
-                sx={{ color: `text.primary` }}
+                sx={{ color: `text.primary`, textDecoration: 'none' }}
                 component={Link}
                 href={'/venta-de-discos'}
               >
@@ -98,7 +98,7 @@ export default function Header() {
               </Typography>
               <Typography
                 variant="subtitle1"
-                sx={{ color: `text.primary` }}
+                sx={{ color: `text.primary`, textDecoration: 'none' }}
                 component={Link}
                 href={'/discografia'}
               >
@@ -106,7 +106,7 @@ export default function Header() {
               </Typography>
               <Typography
                 variant="subtitle1"
-                sx={{ color: `text.primary` }}
+                sx={{ color: `text.primary`, textDecoration: 'none' }}
                 component={Link}
                 href={'/contacto'}
               >
@@ -133,13 +133,26 @@ export default function Header() {
               sx={{
                 position: 'relative',
                 paddingY: 1,
-                cursor: 'pointer'
+                cursor: 'pointer',
+
+                '&::before, &::after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: '-25px',
+
+                  width: 'calc(100% + 50px)', // Make the border longer
+                  height: '1px',
+                  backgroundColor: 'divider'
+                },
+                '&::before': { top: 0 },
+                '&::after': { bottom: 0 }
               }}
             >
               <Typography
                 sx={{
                   color: `text.primary`
                 }}
+                fontSize={'0.8rem'}
               >
                 Inicio
               </Typography>
@@ -153,13 +166,25 @@ export default function Header() {
               sx={{
                 position: 'relative',
                 paddingY: 1,
-                cursor: 'pointer'
+                cursor: 'pointer',
+
+                '&::before, &::after': {
+                  content: '""',
+                  position: 'absolute',
+                  left: '-25px',
+                  width: 'calc(100% + 50px)', // Make the border longer
+                  height: '1px',
+                  backgroundColor: 'divider'
+                },
+                '&::before': { top: 0 },
+                '&::after': { bottom: 0 }
               }}
             >
               <Typography
                 sx={{
                   color: `text.primary`
                 }}
+                fontSize={'0.8rem'}
               >
                 {menu.title}
               </Typography>

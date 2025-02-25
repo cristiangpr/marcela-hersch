@@ -5,19 +5,13 @@ import Link from 'next/link'
 
 export default function Venta() {
   return (
-    <Box
+    <Container
+      maxWidth="lg"
       sx={{
-        bgcolor: 'bacground.default',
-        width: '100%'
+        bgcolor: 'background.default'
       }}
-      padding={10}
-      textAlign={'center'}
     >
-      <Container
-        sx={{
-          bgcolor: 'bacground.default'
-        }}
-      >
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         {' '}
         <Typography variant="h5" color="text.secondary">
           Ecucha en tu plataforma favorita
@@ -31,7 +25,7 @@ export default function Venta() {
             sx={{
               borderRight: '8px solid',
               borderColor: 'divider',
-              margin: 2, // margin-left for spacing
+              marginX: 2, // margin-left for spacing
               display: { xs: 'none', md: 'block' } // Hide on mobile
             }}
           />
@@ -99,7 +93,7 @@ export default function Venta() {
           Shazam, Slacker Radio, SoundExchange, Tencent Music Entertainment
           (TME), Tidal, TikTok, United Media Agency (UMA), Yandex.
         </Typography>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   )
 }

@@ -1,3 +1,4 @@
+import Paola from '@/components/Paola'
 import { Container, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
@@ -84,9 +85,7 @@ export default function Home() {
           }}
         >
           <Image width={700} height={500} alt="image" src={'/home.avif'} />
-          <Typography color="text.primary" fontSize={'xs'}>
-            Foto: Paola Leon
-          </Typography>
+          <Paola />
         </Box>
       </Box>
     </Container>
