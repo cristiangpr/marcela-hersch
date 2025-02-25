@@ -36,6 +36,23 @@ export default function PortadaTesis() {
       <Box
         sx={{
           display: 'flex',
+          flexDirection: 'column',
+          paddingX: 8,
+          paddingY: 0,
+          gap: 1,
+          width: '100%',
+          flex: 1,
+          alignItems: 'right'
+        }}
+      >
+        <Typography variant="body1">
+          Cuernavaca, Morelos, 12 de enero de 2017 <br /> Colegio de Morelos
+          COLMOR
+        </Typography>
+      </Box>
+      <Box
+        sx={{
+          display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
           padding: 8,
           gap: 4,

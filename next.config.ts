@@ -1,6 +1,6 @@
 import type { NextConfig } from 'next'
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -9,11 +9,6 @@ const nextConfig = {
         pathname: '/storage/v1/object/public/**'
       }
     ]
-  },
-  experimental: {
-    serverActions: {
-      timeout: 60000 // 60s timeout
-    }
   }
 }
 

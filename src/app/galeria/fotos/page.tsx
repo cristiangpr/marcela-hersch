@@ -1,9 +1,8 @@
 import { createClient } from '../../../utils/supabase/server'
-import { Container, Stack, Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
-import { Titulo } from '@/interfaces'
 
 // This is a Server Component, it runs server-side.
 export default async function Galeria() {

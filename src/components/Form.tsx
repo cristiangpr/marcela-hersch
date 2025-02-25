@@ -1,9 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client'
 
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 import { Box, Button, Stack, TextField, Typography } from '@mui/material'
-import { sendEmail } from '../app/actions/sendEmail'
+//import { sendEmail } from '../app/actions/sendEmail'
 
 export default function ContactForm() {
   const {
@@ -11,7 +12,7 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors }
   } = useForm()
-  const [status, setStatus] = useState<string | null>(null)
+  const [status /*setStatus*/] = useState<string | null>(null)
 
   const onSubmit = async (data: any) => {
     const formData = new FormData()

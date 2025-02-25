@@ -1,9 +1,8 @@
 import { createClient } from '@/utils/supabase/server'
-import { Container, Stack, Typography } from '@mui/material'
+import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
-import { Titulo } from '@/interfaces'
 
 const info: string[] = [
   'Cuartetos para piano, sitar, tanpura y tabla, en el que logra la fusión de las dos grandes vertientes de la música clásica del mundo: la música clásica de la India y la música clásica de occidente.',

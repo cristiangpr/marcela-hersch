@@ -1,7 +1,7 @@
 import { createClient } from '../../../utils/supabase/server'
 import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
-import Image from 'next/image'
+
 import Grid from '@mui/material/Grid2'
 import { cleanFileName, getYouTubeEmbedUrls } from '@/utils/functions'
 
@@ -53,7 +53,7 @@ export default async function Entrevistas() {
         <Typography variant="h4">Entrevistas y Comentarios</Typography>
         <Grid container justifyContent="center">
           {embedUrls &&
-            embedUrls.map((url, index) => (
+            embedUrls.map((url) => (
               <>
                 <Grid
                   container
