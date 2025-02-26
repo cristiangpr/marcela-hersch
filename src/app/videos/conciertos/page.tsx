@@ -39,7 +39,8 @@ export default async function Conciertos() {
                   textAlign="center"
                   key={url}
                   size={{ xs: 12, sm: 6 }}
-                  padding={2}
+                  paddingY={3}
+                  paddingX={{ xs: 0, sm: 2 }}
                 >
                   <Box
                     sx={{
@@ -47,7 +48,8 @@ export default async function Conciertos() {
                       width: '100%',
                       paddingTop: '56.25%', // 16:9 aspect ratio (9/16 = 0.5625)
                       overflow: 'hidden',
-                      mb: 2
+                      mb: 2,
+                      transform: { xs: 'scale(1.25)', md: 'none' }
                     }}
                   >
                     <iframe
