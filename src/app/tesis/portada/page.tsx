@@ -54,7 +54,7 @@ export default function PortadaTesis() {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: { xs: 'column', md: 'row' },
+          flexDirection: { xs: 'column', sm: 'row' },
           padding: 8,
           gap: 4,
           width: '100%',
@@ -67,8 +67,8 @@ export default function PortadaTesis() {
             width: { xs: '100%', md: '50%' },
 
             display: 'flex', // Add this
-            textAlign: 'right', // Add this
-            justifyContent: 'flex-start' // E
+            textAlign: { xs: 'center', md: 'right' }, // Centers content on mobile
+            justifyContent: { xs: 'center', md: 'flex-start' }
           }}
         >
           <Stack alignItems="flex-end" spacing={3}>
@@ -92,7 +92,27 @@ export default function PortadaTesis() {
               height: 800
             }}
           />
-          <Image width={600} height={800} alt="image" src={'/tesis-1.avif'} />
+        </Box>
+        <Box
+          sx={{
+            order: { xs: -1, md: 1 }, // Moves to the top only on mobile
+            width: { xs: '100%', md: '50%' }, // Full width on mobile, 50% on desktop
+            display: 'flex',
+            justifyContent: 'center',
+            transform: { xs: 'scale(1.25)', md: 'none' },
+            paddingBottom: { xs: 5 }
+          }}
+        >
+          <Image
+            width={600}
+            height={800}
+            style={{
+              width: '100%',
+              height: 'auto'
+            }}
+            alt="image"
+            src={'/tesis-1.avif'}
+          />
         </Box>
       </Box>
     </Container>

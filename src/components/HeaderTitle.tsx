@@ -1,20 +1,25 @@
 import { Box, Divider, Stack, Typography } from '@mui/material'
 export default function HeaderTitle() {
   return (
-    <Box sx={{ display: 'flex', alignItems: 'center' }}>
+    <Box sx={{ display: 'flex', alignItems: { sm: 'left', md: 'center' } }}>
       <Divider
         orientation="vertical"
         flexItem
         sx={{
           mr: 2, // margin-right
           bgcolor: 'black', // make divider visible against AppBar
-          width: '8px' // make divider slightly thicker
+          width: { sm: '0px', md: '8px' }
         }}
       />
       <Stack spacing={0}>
         <Typography
           variant="h2"
-          sx={{ color: 'black', lineHeight: '1.1em', fontWeight: 400 }}
+          sx={{
+            color: 'black',
+            lineHeight: '1.1em',
+            fontWeight: 400,
+            fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' }
+          }}
         >
           MARCELA
         </Typography>
@@ -23,7 +28,11 @@ export default function HeaderTitle() {
         </Typography>
         <Typography
           variant="h5"
-          sx={{ color: `text.disabled`, fontWeight: 700 }}
+          sx={{
+            color: `text.disabled`,
+            fontWeight: 700,
+            fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' }
+          }}
         >
           pianista y compositora
         </Typography>

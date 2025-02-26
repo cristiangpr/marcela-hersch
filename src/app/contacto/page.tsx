@@ -12,14 +12,14 @@ export default function Contacto() {
         bgcolor: 'background.default'
       }}
     >
-      <Box paddingX={8} sx={{ textAlign: 'left', mt: 4 }}>
+      <Box paddingX={{ xs: 2, sm: 4, md: 8 }} sx={{ textAlign: 'left', mt: 4 }}>
         <Typography variant="h3">Contacto</Typography>
       </Box>
       <Box
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
-          padding: 8,
+          padding: { xs: 2, sm: 4, md: 8 },
 
           gap: 4,
           width: '100%',
@@ -30,15 +30,20 @@ export default function Contacto() {
           sx={{
             width: { xs: '100%', md: '40%' },
             flexShrink: 0,
+
             flexGrow: 0,
-            display: 'flex', // Add this
-            alignItems: 'stretch' // Add this
+            display: 'flex' // Add this
           }}
         >
           <Stack spacing={1}>
             <Image
-              width={400}
-              height={550}
+              style={{
+                width: '100%',
+                height: 'auto'
+              }}
+              width={0}
+              height={0}
+              sizes="(max-width: 600px) 100vw, 600px"
               alt="image"
               src={'/contacto.avif'}
             />

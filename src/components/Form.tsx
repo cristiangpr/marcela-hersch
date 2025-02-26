@@ -3,8 +3,16 @@
 
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { Box, Button, Stack, TextField, Typography } from '@mui/material'
-//import { sendEmail } from '../app/actions/sendEmail'
+import {
+  Box,
+  Button,
+  Stack,
+  TextField,
+  Typography,
+  Snackbar,
+  Alert
+} from '@mui/material'
+import { sendEmail } from '@/app/actions/sendEmail'
 
 export default function ContactForm() {
   const {
@@ -12,7 +20,10 @@ export default function ContactForm() {
     handleSubmit,
     formState: { errors }
   } = useForm()
-  const [status /*setStatus*/] = useState<string | null>(null)
+
+  const [status, setStatus] = useState<string | null>(null)
+  const [openSnackbar, setOpenSnackbar] = useState(false)
+  const [messageType, setMessageType] = useState<'success' | 'error'>('success')
 
   const onSubmit = async (data: any) => {
     const formData = new FormData()
@@ -21,14 +32,20 @@ export default function ContactForm() {
     formData.append('asunto', data.asunto)
     formData.append('mensaje', data.mensaje)
 
-    console.log(formData)
-
-    /* const result = await sendEmail(formData)
+    const result = await sendEmail(formData)
     if (result.success) {
       setStatus('Email sent successfully!')
+      setMessageType('success')
     } else {
       setStatus('Failed to send email.')
-    }*/
+      setMessageType('error')
+    }
+
+    setOpenSnackbar(true) // Open the snackbar on submit
+  }
+
+  const handleCloseSnackbar = () => {
+    setOpenSnackbar(false) // Close the snackbar
   }
 
   return (
@@ -89,7 +106,17 @@ export default function ContactForm() {
           </Button>
         </Stack>
       </form>
-      {status && <p className="mt-4">{status}</p>}
+
+      {/* Snackbar for success/error messages */}
+      <Snackbar
+        open={openSnackbar}
+        autoHideDuration={6000}
+        onClose={handleCloseSnackbar}
+      >
+        <Alert onClose={handleCloseSnackbar} severity={messageType}>
+          {status}
+        </Alert>
+      </Snackbar>
     </Box>
   )
 }

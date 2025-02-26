@@ -16,7 +16,7 @@ export default function Espanol() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          paddingX: 8,
+          paddingX: { xs: 2, sm: 4, md: 8 },
           paddingTop: 2,
 
           paddingBottom: 2,
@@ -33,7 +33,7 @@ export default function Espanol() {
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
-          paddingX: 8,
+          paddingX: { xs: 2, sm: 4, md: 8 },
           gap: 4,
           width: '100%',
           flex: 1,
@@ -46,13 +46,25 @@ export default function Espanol() {
             flexShrink: 0,
             flexGrow: 0,
             display: 'flex', // Add this
-            alignItems: 'stretch' // Add this
+            alignItems: { xs: 'center', md: 'flex-start' }
           }}
         >
           {' '}
           <Stack spacing={1}>
-            <Image width={400} height={550} alt="image" src={'/espanol.avif'} />
-            <Paola />
+            <Image
+              style={{
+                width: '100%',
+                height: 'auto',
+                objectFit: 'contain'
+              }}
+              width={400}
+              height={550}
+              alt="image"
+              src={'/espanol.avif'}
+            />
+            <Box sx={{ width: '100%', maxWidth: { xs: '300px', sm: '400px' } }}>
+              <Paola />
+            </Box>
           </Stack>
           <Box
             sx={{

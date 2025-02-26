@@ -1,15 +1,14 @@
 import { createClient } from '../../../utils/supabase/server'
-import { Container, Stack, Typography } from '@mui/material'
+import { Button, Container, Link, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
-import { Titulo } from '@/interfaces'
 
 // This is a Server Component, it runs server-side.
-export default async function Beethoven() {
+export default async function Galeria2() {
   const supabase = await createClient()
 
-  const bucket = 'homenaje-beethoven'
+  const bucket = 'galeria-2'
 
   // Fetch the list of files from the bucket
   const { data, error } = await supabase.storage.from(bucket).list()
@@ -23,30 +22,18 @@ export default async function Beethoven() {
   const imageUrls: string[] = data.map((file) => {
     return supabase.storage.from(bucket).getPublicUrl(file.name).data.publicUrl // Get the public URL for each file
   })
-  const titulos: Titulo[] = [
-    {
-      titulo: 'Teatro Ocampo',
-      subTitulo: '22 de Noviembre 2020'
-    },
-    {
-      titulo: 'Teatro de la Ciudad Esperanza Iris',
-      subTitulo: '3 de Octubre 2021'
-    },
-    {
-      titulo: 'Auditorio Teopanzolco',
-      subTitulo: '9 de Diciembre 2021'
-    }
-  ]
 
   return (
     <Container
       maxWidth="lg"
       sx={{
-        bgcolor: 'background.default'
+        bgcolor: 'background.default',
+        width: '100%'
       }}
     >
       <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
-        <Typography variant="h4">Homenaje a Beethoven</Typography>
+        <Typography variant="h4">Galeria 2</Typography>
+
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>
@@ -55,20 +42,14 @@ export default async function Beethoven() {
                 justifyContent="center"
                 textAlign="center"
                 key={url}
-                size={{ xs: 12, sm: 6, md: 4 }}
-                padding={2}
+                size={
+                  index >= 12 ? { xs: 12, sm: 6 } : { xs: 12, md: 6, lg: 4 }
+                }
+                paddingX={{ xs: 0, sm: 2 }}
+                paddingY={2}
               >
-                <Stack>
-                  <Typography variant="h5" color="text.disabled">
-                    {titulos[index].titulo}
-                  </Typography>
-                  <Typography variant="h6" color="text.disabled">
-                    {titulos[index].subTitulo}
-                  </Typography>
-                </Stack>
-
                 <Image
-                  key={index}
+                  key={url}
                   src={url}
                   alt={`Image ${index}`}
                   style={{
@@ -81,6 +62,19 @@ export default async function Beethoven() {
               </Grid>
             </>
           ))}
+          <Box
+            sx={{
+              display: 'flex', // Enables flexbox
+              justifyContent: 'center', // Centers horizontally
+              alignItems: 'center', // Centers vertically (optional)
+              width: '100%', // Ensures full width
+              mt: 4 // Adds margin to separate from images
+            }}
+          >
+            <Button variant="outlined" component={Link} href="/galeria/fotos">
+              Pagina 1
+            </Button>
+          </Box>
         </Grid>
       </Box>
     </Container>

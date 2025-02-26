@@ -45,7 +45,7 @@ export default async function Programa() {
                   justifyContent="center"
                   textAlign="center"
                   key={url}
-                  size={6}
+                  size={{ xs: 12, sm: 6 }}
                   padding={2}
                 >
                   <Image

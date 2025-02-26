@@ -1,5 +1,5 @@
 import { createClient } from '../../../utils/supabase/server'
-import { Container, Typography } from '@mui/material'
+import { Button, Container, Link, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 
 import Grid from '@mui/material/Grid2'
@@ -56,19 +56,38 @@ export default async function Entrevistas() {
                   justifyContent="center"
                   textAlign="center"
                   key={url}
-                  size={6}
-                  padding={2}
+                  size={{ xs: 12, sm: 6 }}
+                  paddingY={3}
+                  paddingX={{ xs: 0, sm: 2 }}
                 >
-                  <iframe
-                    width="100%"
-                    height="315"
-                    src={url}
-                    title="YouTube video player"
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerPolicy="strict-origin-when-cross-origin"
-                    allowFullScreen
-                  ></iframe>
+                  <Box
+                    sx={{
+                      position: 'relative',
+                      width: '100%',
+                      paddingTop: '56.25%', // 16:9 aspect ratio (9/16 = 0.5625)
+                      overflow: 'hidden',
+                      mb: 2,
+                      transform: { xs: 'scale(1.25)', md: 'none' }
+                    }}
+                  >
+                    <iframe
+                      style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        bottom: 0,
+                        right: 0,
+                        width: '100%',
+                        height: '100%'
+                      }}
+                      src={url}
+                      title="YouTube video player"
+                      frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      referrerPolicy="strict-origin-when-cross-origin"
+                      allowFullScreen
+                    ></iframe>
+                  </Box>
                 </Grid>
               </>
             ))}
@@ -82,8 +101,9 @@ export default async function Entrevistas() {
                   justifyContent="center"
                   textAlign="center"
                   key={url}
-                  size={6}
-                  padding={2}
+                  size={{ xs: 12, sm: 6 }}
+                  paddingY={2}
+                  paddingX={{ xs: 0, sm: 2 }}
                 >
                   <Typography variant="h6" color="text.disabled">
                     {cleanFileName(names[index])}
@@ -96,6 +116,32 @@ export default async function Entrevistas() {
               </>
             ))}
         </Grid>
+        <Stack spacing={2} display="flex" alignItems="center">
+          <Button
+            sx={{ width: { xs: '100%', sm: '75%', md: '50%' } }}
+            variant="outlined"
+            component={Link}
+            href="https://www.proceso.com.mx/opinion/2021/12/3/de-sonatas-improvisaciones-ragas-hindues-276916.html"
+          >
+            Proceso: Entrevista con Samuel Champion
+          </Button>
+          <Button
+            sx={{ width: { xs: '100%', sm: '75%', md: '50%' } }}
+            variant="outlined"
+            component={Link}
+            href="https://www.proceso.com.mx/opinion/2021/12/3/de-sonatas-improvisaciones-ragas-hindues-276916.html"
+          >
+            Comentario Ismael Álvarez, el coleccionista
+          </Button>
+          <Button
+            sx={{ width: { xs: '100%', sm: '75%', md: '50%' } }}
+            variant="outlined"
+            component={Link}
+            href="https://www.proceso.com.mx/opinion/2021/12/3/de-sonatas-improvisaciones-ragas-hindues-276916.html"
+          >
+            Comentario Abril Gómez, bailarina y coreógrafa
+          </Button>
+        </Stack>
       </Box>
     </Container>
   )

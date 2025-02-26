@@ -17,9 +17,25 @@ export default function Venta() {
         <Typography variant="h5" color="text.secondary">
           Ecucha en tu plataforma favorita
         </Typography>
-        <Box display="flex" justifyContent="center" width="80%" paddingTop={5}>
+        <Box
+          display="flex"
+          justifyContent="center"
+          width={{ xs: '100%', md: '80%' }}
+          paddingTop={5}
+          flexDirection={{ xs: 'column', md: 'row' }}
+        >
           <Stack spacing={1}>
-            <Image width={600} height={450} alt="image" src={'/venta.avif'} />
+            <Image
+              style={{
+                width: '100%',
+                height: 'auto'
+              }}
+              width={0}
+              height={0}
+              sizes="(max-width: 600px) 100vw, 600px"
+              alt="image"
+              src={'/venta.avif'}
+            />
             <Paola />
           </Stack>
 
@@ -32,8 +48,8 @@ export default function Venta() {
             }}
           />
 
-          <Box width="15%">
-            <Stack spacing={2}>
+          <Box width={{ xs: '100%', md: '20%' }}>
+            <Stack spacing={2} justifyContent="center" paddingTop={{ xs: 2 }}>
               <Link href="https://www.amazon.com/s?k=Marcela+Hersch&i=digital-music&search-type=ss&ref=ntt_srch_drd_B00TTOWYM0">
                 <Image
                   src={'/amazon.png'}

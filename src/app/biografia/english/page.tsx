@@ -16,9 +16,8 @@ export default function English() {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          paddingX: 8,
+          paddingX: { xs: 2, sm: 4, md: 8 },
           paddingTop: 2,
-
           paddingBottom: 2,
           gap: 1,
           width: '100%',
@@ -33,7 +32,7 @@ export default function English() {
         sx={{
           display: 'flex',
           flexDirection: { xs: 'column', md: 'row' },
-          paddingX: 8,
+          paddingX: { xs: 2, sm: 4, md: 8 },
           gap: 4,
           width: '100%',
           flex: 1
@@ -44,13 +43,34 @@ export default function English() {
             width: { xs: '100%', md: '40%' },
             flexShrink: 0,
             flexGrow: 0,
-            display: 'flex', // Add this
-            alignItems: 'stretch' // Add this
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: { xs: 'center', md: 'flex-start' }
           }}
         >
-          <Stack spacing={1}>
-            <Image width={400} height={550} alt="image" src={'/english.avif'} />
-            <Paola />
+          <Stack spacing={1} sx={{ width: '100%', alignItems: 'center' }}>
+            <Box
+              sx={{
+                width: '100%',
+                maxWidth: { xs: '300px', sm: '400px' },
+                position: 'relative'
+              }}
+            >
+              <Image
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain'
+                }}
+                width={400}
+                height={550}
+                alt="image"
+                src={'/english.avif'}
+              />
+            </Box>
+            <Box sx={{ width: '100%', maxWidth: { xs: '300px', sm: '400px' } }}>
+              <Paola />
+            </Box>
           </Stack>
           <Box
             sx={{
@@ -68,7 +88,7 @@ export default function English() {
             flexGrow: 0
           }}
         >
-          <Typography color="text.primary" component={'p'}>
+          <Typography color="text.primary" component={'p'} paragraph>
             Marcela Hersch, a Mexican pianist and composer, was born to an
             American father and a Mexican concert pianist mother, Marcela
             Martínez Barranco. She began studying piano at the age of four under
@@ -77,16 +97,16 @@ export default function English() {
             Luz María Puente, and Aurora Serratos.
           </Typography>
 
-          <Typography color="text.primary" component={'p'}>
+          <Typography color="text.primary" component={'p'} paragraph>
             She graduated as a Concert Pianist from the National Conservatory of
-            Music in Mexico and earned a Master’s of Music in Piano Performance
+            Music in Mexico and earned a Master's of Music in Piano Performance
             from Indiana University. In 2017, she graduated with honors from
             Colegio de Morelos (COLMOR) with a transdisciplinary Ph.D.
             dissertation combining philosophy, music, and miniature painting
             from India.
           </Typography>
 
-          <Typography color="text.primary" component={'p'}>
+          <Typography color="text.primary" component={'p'} paragraph>
             Throughout her career, she studied with distinguished international
             musicians, including Michel Block, Alfonso Montecinos (a pupil of
             Claudio Arrau), and Edith Picht-Axenfeld (a student of Wanda
@@ -97,20 +117,20 @@ export default function English() {
             with Tony Bravo and jazz with Juan José Calatayud.
           </Typography>
 
-          <Typography color="text.primary" component={'p'}>
+          <Typography color="text.primary" component={'p'} paragraph>
             Marcela Hersch has released eight recordings on compact discs, five
             of which feature her own compositions. She has performed as an
             orchestral soloist since childhood and has given concerts in Mexico,
             the United States, Costa Rica, Spain, Germany, Cuba, and India. In
             2012, she premiered her compositions in India, including solo piano
-            works and "Tiger’s Flower" and "So it is" for piano, sitar, tabla,
+            works and "Tiger's Flower" and "So it is" for piano, sitar, tabla,
             and tanpura, featuring Shubhendra Rao (a protégé and top student of
             Ravi Shankar) on sitar and Zoheb Khan on tabla. In 2014, she
             performed in Delhi with an ensemble featuring tabla, soprano,
             tanpura, and electric guitar.
           </Typography>
 
-          <Typography color="text.primary" component={'p'}>
+          <Typography color="text.primary" component={'p'} paragraph>
             She began teaching piano at the age of fourteen, and since the age
             of twenty-four, she has continuously taught both privately and at
             her own music school, the Centre for Musical Education Pauta.

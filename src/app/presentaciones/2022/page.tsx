@@ -72,11 +72,11 @@ export default async function VeintidosPage() {
                 container
                 justifyContent="center"
                 textAlign="center"
-                key={url}
-                size={index == 0 || index === 3 ? 6 : 4}
+                key={url + 'grid'}
+                size={{ md: index == 0 || index === 3 ? 6 : 4, sm: 6, xs: 12 }}
                 padding={3}
               >
-                <Stack>
+                <Stack key={url + 'stack'}>
                   <Typography variant="h5" color="text.disabled">
                     {titulos[index].titulo}
                   </Typography>
@@ -86,7 +86,7 @@ export default async function VeintidosPage() {
                 </Stack>
 
                 <Image
-                  key={index}
+                  key={url}
                   src={url}
                   alt={`Image ${index}`}
                   style={{

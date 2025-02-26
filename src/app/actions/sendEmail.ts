@@ -12,10 +12,10 @@ export async function sendEmail(formData: FormData) {
 
   try {
     await resend.emails.send({
-      from: 'noreply@yourdomain.com', // Use a verified domain or a free Resend address
-      to: email,
+      from: 'onboarding@resend.dev', // Use a verified domain or a free Resend address
+      to: 'marce.hersch@gmail.com',
       subject: asunto,
-      text: `Name: ${nombre}\nEmail: ${email}\nMessage: ${mensaje}`
+      text: `Nombre: ${nombre}\nEmail: ${email}\nMensaje: ${mensaje}`
     })
 
     return { success: true, message: 'Email sent!' }

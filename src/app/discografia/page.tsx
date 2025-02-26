@@ -66,7 +66,7 @@ export default async function Discografia() {
                   alt={`Image ${index}`}
                   style={{
                     width: '100%',
-                    height: 400
+                    height: 'auto'
                   }}
                   width={500}
                   height={300}

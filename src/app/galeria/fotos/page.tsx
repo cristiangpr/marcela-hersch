@@ -1,5 +1,5 @@
 import { createClient } from '../../../utils/supabase/server'
-import { Container, Typography } from '@mui/material'
+import { Button, Container, Link, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
@@ -40,12 +40,9 @@ export default async function Galeria() {
                 justifyContent="center"
                 textAlign="center"
                 key={url}
-                size={
-                  index === 24 || index === 25 || index === 29 || index === 30
-                    ? { xs: 12, md: 6 }
-                    : { xs: 12, md: 6, lg: 4 }
-                }
-                padding={1}
+                size={{ xs: 12, md: 6, lg: 4 }}
+                paddingX={{ xs: 0, sm: 2 }}
+                paddingY={2}
               >
                 <Image
                   key={url}
@@ -61,6 +58,19 @@ export default async function Galeria() {
               </Grid>
             </>
           ))}
+          <Box
+            sx={{
+              display: 'flex', // Enables flexbox
+              justifyContent: 'center', // Centers horizontally
+              alignItems: 'center', // Centers vertically (optional)
+              width: '100%', // Ensures full width
+              mt: 4 // Adds margin to separate from images
+            }}
+          >
+            <Button variant="outlined" component={Link} href="/galeria/fotos-2">
+              Pagina 2
+            </Button>
+          </Box>
         </Grid>
       </Box>
     </Container>
