@@ -79,8 +79,9 @@ export default function PortadaTesis() {
               Sinodales de izquierda a derecha <br />
               Dr. Oscar Figueroa Castro <br />
               Dr. Xicoténcatl Octavio Martínez Ruiz <br />
-              Dra. Elsa Cross Anzaldúa Dr. <br />
-              Antonio García de León Dr Jesús Nieto Sotelo <br />
+              Dra. Elsa Cross Anzaldúa <br />
+              Dr. Antonio García de León <br />
+              Dr Jesús Nieto Sotelo
             </Typography>
           </Stack>
           <Box

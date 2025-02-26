@@ -22,9 +22,10 @@ export default async function Entrevistas() {
   const supabase = await createClient()
 
   const bucket = 'entrevistas'
+  const folder = 'audio'
 
   // Fetch the list of files from the bucket
-  const { data, error } = await supabase.storage.from(bucket).list('audio')
+  const { data, error } = await supabase.storage.from(bucket).list(folder)
   console.log('Supabase response data:', data)
   console.log('Supabase response error:', error)
 
@@ -35,7 +36,8 @@ export default async function Entrevistas() {
 
   const audioUrls: string[] = data.map((file) => {
     names.push(file.name)
-    return supabase.storage.from(bucket).getPublicUrl(file.name).data.publicUrl // Get the public URL for each file
+    const filePath = `${folder}/${file.name}`
+    return supabase.storage.from(bucket).getPublicUrl(filePath).data.publicUrl // Get the public URL for each file
   })
 
   return (

@@ -23,15 +23,20 @@ export default function HeaderTitle() {
         >
           MARCELA
         </Typography>
-        <Typography variant="h3" sx={{ color: 'black' }}>
+        <Typography
+          variant="h3"
+          sx={{
+            color: 'black',
+            fontSize: { xs: '1.8rem' }
+          }}
+        >
           HERSCH
         </Typography>
         <Typography
           variant="h5"
           sx={{
             color: `text.disabled`,
-            fontWeight: 700,
-            fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' }
+            fontWeight: 700
           }}
         >
           pianista y compositora
