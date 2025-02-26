@@ -97,7 +97,7 @@ export default async function VideosTesis() {
             los músicos.
           </Typography>
         </Stack>
-        <Grid key={0} container justifyContent="center">
+        <Grid key={'grid'} container justifyContent="center">
           {items &&
             items.map((item) => (
               <>
@@ -125,7 +125,7 @@ export default async function VideosTesis() {
                       width: '100%',
                       paddingTop: '56.25%', // 16:9 aspect ratio (9/16 = 0.5625)
                       overflow: 'hidden',
-                      mb: 2,
+                      m: 2,
                       transform: { xs: 'scale(1.25)', md: 'none' }
                     }}
                   >
