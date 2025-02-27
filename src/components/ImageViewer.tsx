@@ -129,7 +129,8 @@ export default function ImageViewer({
               style={{
                 maxWidth: '100%',
                 maxHeight: '100%',
-                objectFit: 'contain'
+                objectFit: 'contain',
+                transform: isText ? 'scale(1.12)' : 'scale(1.05)'
               }}
               width={1000}
               height={800}

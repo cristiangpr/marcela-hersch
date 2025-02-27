@@ -18,7 +18,7 @@ export default function TesisMedia() {
       title: 'Catálogo de imágenes del Raga Bháirava'
     },
     {
-      label: 'anexo b',
+      label: 'anexo b-2',
       bucket: 'galeria-tesis-2',
       folder: '',
       title: 'Catálogo de imágenes del Raga Bháirava Parte 2'
