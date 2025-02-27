@@ -17,8 +17,7 @@ export default function English() {
           display: 'flex',
           flexDirection: 'column',
           paddingX: { xs: 2, sm: 4, md: 8 },
-          paddingTop: 2,
-          paddingBottom: 2,
+          paddingY: 5,
           gap: 1,
           width: '100%',
           flex: 1,
@@ -45,7 +44,8 @@ export default function English() {
             flexGrow: 0,
             display: 'flex',
             flexDirection: 'column',
-            alignItems: { xs: 'center', md: 'flex-start' }
+            alignItems: { xs: 'center', md: 'flex-start' },
+            position: 'relative' // Add this
           }}
         >
           <Stack spacing={1} sx={{ width: '100%', alignItems: 'center' }}>
@@ -53,7 +53,8 @@ export default function English() {
               sx={{
                 width: '100%',
                 maxWidth: { xs: '300px', sm: '400px' },
-                position: 'relative'
+                position: 'relative',
+                pr: 2
               }}
             >
               <Image
@@ -74,10 +75,14 @@ export default function English() {
           </Stack>
           <Box
             sx={{
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              bottom: 0,
+
               borderRight: '4px solid',
               borderColor: 'divider',
-              ml: 2, // margin-left for spacing
-              display: { xs: 'none', md: 'block' } // Hide on mobile
+              display: { xs: 'none', md: 'block' }
             }}
           />
         </Box>

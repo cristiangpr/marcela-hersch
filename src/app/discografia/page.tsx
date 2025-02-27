@@ -10,15 +10,16 @@ const info: string[] = [
   'Marcela Hersch interpreta música para piano solo de Bach, Mozart, Beethoven, Chopin, Debussy, Ginastera, Villalobos y Marcela Hersch',
   'Composiciones de Marcela Hersch escritas para su grupo FUSION CREATIVA ensamble en las que fusiona música de oriente y occidente.',
   'Composiciones  y arreglos de Marcela Hersch sobre canciones de la lírica infantil mexicana en los que fusiona instrumentos occidentales con instrumentos de otras culturas.',
+  'Composiciones de Marcela Hersch para piano solo creadas e interpretada por ella misma.',
   'Marcela Hersch interpreta música para piano solo de este excelente y fallecido compositor mexicano.',
-  ''
+  'Grabación en vivo del concierto del gran flautista de la India Hari Prassad Chaurasia en el que Marcela Hersch fue invitada a acompañarlo  tocando la Tanpura.'
 ]
 
 // This is a Server Component, it runs server-side.
 export default async function Discografia() {
   const supabase = await createClient()
 
-  const bucket = 'portadas'
+  const bucket = 'portadas-discos'
 
   // Fetch the list of files from the bucket
   const { data, error } = await supabase.storage.from(bucket).list()
@@ -34,18 +35,15 @@ export default async function Discografia() {
   })
 
   return (
-    <Box
-      paddingBottom={10}
-      sx={{ bgcolor: 'background.default', width: '100%' }}
+    <Container
+      sx={{
+        bgcolor: 'background.default',
+
+        paddingBottom: 30
+      }}
     >
-      <Container
-        sx={{
-          bgcolor: 'background.default',
-          textAlign: 'center',
-          paddingTop: [5]
-        }}
-      >
-        <Typography padding={10} variant="h4">
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }}>
+        <Typography padding={5} variant="h4">
           Disocografia
         </Typography>
         <Grid container justifyContent="center" sx={{ pointerEvents: 'none' }}>
@@ -64,21 +62,24 @@ export default async function Discografia() {
                   key={url}
                   src={url}
                   alt={`Image ${index}`}
-                  style={{
-                    width: '100%',
-                    height: 'auto'
-                  }}
                   width={500}
-                  height={300}
+                  height={315}
                 />
-                <Typography paddingTop={1} fontSize={'xs'}>
+                <Typography
+                  marginTop={2}
+                  fontSize={'xs'}
+                  sx={{
+                    alignSelf: 'flex-start',
+                    height: '100%'
+                  }}
+                >
                   {info[index]}
                 </Typography>
               </Grid>
             </>
           ))}
         </Grid>
-      </Container>
-    </Box>
+      </Box>
+    </Container>
   )
 }

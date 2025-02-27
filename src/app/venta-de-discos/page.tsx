@@ -41,7 +41,7 @@ export default function Venta() {
 
           <Box
             sx={{
-              borderRight: '8px solid',
+              borderRight: '4px solid',
               borderColor: 'divider',
               marginX: 2, // margin-left for spacing
               display: { xs: 'none', md: 'block' } // Hide on mobile

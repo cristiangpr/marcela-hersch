@@ -48,9 +48,9 @@ export default function Home() {
 
       {/* Attribution */}
       <Box
-        textAlign={'right'}
+        textAlign="right"
         sx={{
-          mr: { xs: 2, sm: 4, md: 30 },
+          mr: { xs: 2, sm: 4, md: 20 },
           mb: { xs: 4, md: 2 }
         }}
       >

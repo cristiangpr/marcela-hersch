@@ -27,7 +27,7 @@ export default async function Conciertos() {
         bgcolor: 'background.default'
       }}
     >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
         <Typography variant="h4">Conciertos</Typography>
         <Grid container justifyContent="center">
           {embedUrls &&

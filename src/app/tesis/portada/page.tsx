@@ -15,7 +15,7 @@ export default function PortadaTesis() {
           display: 'flex',
           flexDirection: 'column',
           paddingX: 8,
-          paddingTop: 4,
+          paddingTop: 5,
           paddingBottom: 0,
           gap: 1,
           width: '100%',

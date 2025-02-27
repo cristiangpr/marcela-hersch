@@ -35,7 +35,7 @@ export default function TesisMedia() {
           display: 'flex',
           flexDirection: 'column',
           paddingX: { xs: 2, sm: 4, md: 8 },
-          paddingTop: 2,
+          paddingTop: 5,
           paddingBottom: 20,
           gap: 1,
           width: '100%',
@@ -101,6 +101,7 @@ export default function TesisMedia() {
                 label={item.label}
                 bucket={item.bucket}
                 folder={item.folder}
+                isText={false}
               />
             </Box>
 

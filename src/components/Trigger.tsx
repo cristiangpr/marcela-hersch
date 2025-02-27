@@ -9,12 +9,14 @@ type GalleryTriggerProps = {
   label: string
   bucket: string
   folder: string
+  isText: boolean
 }
 
 export default function GalleryTrigger({
   label,
   bucket,
-  folder
+  folder,
+  isText
 }: GalleryTriggerProps) {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -37,6 +39,7 @@ export default function GalleryTrigger({
         fetchImages={() => fetchImages()}
         open={isOpen}
         onClose={() => setIsOpen(false)}
+        isText={isText}
       />
     </>
   )

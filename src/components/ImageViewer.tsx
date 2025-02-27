@@ -16,12 +16,14 @@ type ImageViewerProps = {
   fetchImages: () => Promise<string[] | undefined>
   open: boolean
   onClose: () => void
+  isText: boolean
 }
 
 export default function ImageViewer({
   fetchImages,
   open,
-  onClose
+  onClose,
+  isText
 }: ImageViewerProps) {
   const [images, setImages] = useState<string[] | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -67,13 +69,14 @@ export default function ImageViewer({
       open={open}
       onClose={onClose}
       maxWidth="lg"
-      fullWidth
+      fullScreen
       PaperProps={{
         sx: {
           position: 'relative',
           margin: { xs: 1, sm: 2, md: 3 },
           width: { xs: 'calc(100% - 16px)', sm: 'auto' },
-          maxHeight: '90vh'
+          maxHeight: '100vh',
+          backgroundColor: 'black'
         }
       }}
     >
@@ -93,7 +96,7 @@ export default function ImageViewer({
         <Box
           style={{
             width: '100%',
-            height: '70vh',
+            height: '95vh',
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
@@ -104,8 +107,8 @@ export default function ImageViewer({
           {loading ? (
             <div
               style={{
-                width: '100%',
-                height: '70vh',
+                width: '100vh',
+                height: '90vh',
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center'
@@ -148,7 +151,8 @@ export default function ImageViewer({
             justifyContent: 'space-between',
             px: 2,
             py: 1,
-            backgroundColor: '#f5f5f5'
+            backgroundColor: '#f5f5f5',
+            maxHeight: '40px'
           }}
         >
           <IconButton onClick={handlePrevious} disabled={currentIndex === 0}>

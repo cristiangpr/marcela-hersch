@@ -61,7 +61,7 @@ export default function Tesis() {
     }
   ]
   return (
-    <Container maxWidth="lg" sx={{ py: 4 }}>
+    <Container maxWidth="lg" sx={{ py: 5 }}>
       <Typography variant="h4" component="h1" align="center" gutterBottom>
         El raga Báirava: una expresión musical y pictográfica de Shiva
       </Typography>
@@ -94,6 +94,7 @@ export default function Tesis() {
               label={item.label}
               bucket={item.bucket}
               folder={item.folder}
+              isText={true}
             />
           </Box>
 

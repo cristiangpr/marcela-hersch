@@ -79,7 +79,7 @@ export default async function VideosTesis() {
         bgcolor: 'background.default'
       }}
     >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
         <Stack spacing={1}>
           <Typography variant="h4">Anexo A de la Tesis</Typography>
           <Typography variant="h4">

@@ -15,11 +15,9 @@ export default function Espanol() {
       <Box
         sx={{
           display: 'flex',
-          flexDirection: 'column',
-          paddingX: { xs: 2, sm: 4, md: 8 },
-          paddingTop: 2,
 
-          paddingBottom: 2,
+          paddingX: { xs: 2, sm: 4, md: 8 },
+          paddingY: 5,
           gap: 1,
           width: '100%',
           flex: 1,
@@ -46,32 +44,46 @@ export default function Espanol() {
             flexShrink: 0,
             flexGrow: 0,
             display: 'flex', // Add this
-            alignItems: { xs: 'center', md: 'flex-start' }
+            alignItems: { xs: 'center', md: 'flex-start' },
+            justifyContent: 'flex-end',
+            position: 'relative', // Add this
+            paddingX: 2
           }}
         >
           {' '}
           <Stack spacing={1}>
-            <Image
-              style={{
+            <Box
+              sx={{
                 width: '100%',
-                height: 'auto',
-                objectFit: 'contain'
+                maxWidth: { xs: '300px', sm: '600px' },
+                position: 'relative'
               }}
-              width={400}
-              height={550}
-              alt="image"
-              src={'/espanol.avif'}
-            />
+            >
+              <Image
+                style={{
+                  width: '100%',
+                  height: 'auto',
+                  objectFit: 'contain'
+                }}
+                width={600}
+                height={550}
+                alt="image"
+                src={'/espanol.avif'}
+              />
+            </Box>
             <Box sx={{ width: '100%', maxWidth: { xs: '300px', sm: '400px' } }}>
               <Paola />
             </Box>
           </Stack>
           <Box
             sx={{
+              position: 'absolute',
+              right: 0,
+              top: 0,
+              bottom: 0,
               borderRight: '4px solid',
               borderColor: 'divider',
-              ml: 2, // margin-left for spacing
-              display: { xs: 'none', md: 'block' } // Hide on mobile
+              display: { xs: 'none', md: 'block' }
             }}
           />
         </Box>
