@@ -21,25 +21,25 @@ export default function Tesis() {
       label: 'capitulo 1',
       bucket,
       folder: 'capitulo-1',
-      title: 'Shiva'
+      title: 'Antecedentes de la figura del dios Shiva y del Shivaísmo'
     },
     {
       label: 'capitulo 2',
       bucket,
       folder: 'capitulo-2',
-      title: 'El ràga Bháirava en la música'
+      title: 'Shiva'
     },
     {
       label: 'capitulo 3',
       bucket,
-      folder: 'capitulo-3',
-      title: 'El ràga Bháirava en la pintura miniatura'
+      folder: 'capitulo-tres',
+      title: 'El ràga Bháirava en la música'
     },
     {
       label: 'capitulo 4',
       bucket,
-      folder: 'capitulo-4',
-      title: 'Antecedentes de la figura del dios Shiva y del Shivaísmo'
+      folder: 'capitulo-cuatro',
+      title: 'El ràga Bháirava en la pintura miniatura'
     },
     {
       label: 'conclusiones',

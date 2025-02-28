@@ -16,18 +16,19 @@ export default function HeaderTitle() {
           variant="h2"
           sx={{
             color: 'black',
-            lineHeight: '1.1em',
-            fontWeight: 400,
+            lineHeight: '1em',
+            fontWeight: 700,
             fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' }
           }}
         >
           MARCELA
         </Typography>
         <Typography
-          variant="h3"
+          variant="h2"
           sx={{
             color: 'black',
-            fontSize: { xs: '1.8rem' }
+            fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' },
+            lineHeight: '1em'
           }}
         >
           HERSCH

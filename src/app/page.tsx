@@ -31,16 +31,7 @@ export default function Home() {
           }}
         >
           La Música lleva un mensaje de eternidad que llena de buenos
-          sentimientos al hombre y lo hace sentir amor.
-        </Typography>
-
-        <Typography
-          color="text.primary"
-          variant="body2"
-          sx={{
-            px: { xs: 2, sm: 4 } // Add padding on smaller screens
-          }}
-        >
+          sentimientos al hombre y lo hace sentir amor. <br />
           Ser intérprete es llevar al que escucha y a uno mismo a ese lugar, a
           ese momento de unión con el infinito.
         </Typography>
