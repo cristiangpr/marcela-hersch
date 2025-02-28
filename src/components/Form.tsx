@@ -12,7 +12,7 @@ import {
   Snackbar,
   Alert
 } from '@mui/material'
-import { sendEmail } from '@/app/actions/sendEmail'
+import emailjs from '@emailjs/browser'
 
 export default function ContactForm() {
   const {
@@ -25,6 +25,42 @@ export default function ContactForm() {
   const [openSnackbar, setOpenSnackbar] = useState(false)
   const [messageType, setMessageType] = useState<'success' | 'error'>('success')
 
+  async function sendEmail(formData: FormData) {
+    const email = formData.get('email') as string
+    const nombre = formData.get('nombre') as string
+    const asunto = formData.get('asunto') as string
+    const mensaje = formData.get('mensaje') as string
+    const templateParams = {
+      nombre,
+      email,
+      asunto,
+      mensaje
+
+      // Send to client or your default email
+    }
+    console.log(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY)
+    emailjs.init(process.env.NEXT_PUBLIC_EMAIL_PUBLIC_KEY!)
+
+    try {
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAIL_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAIL_TEMPLATE_ID!,
+        templateParams
+      )
+
+      return {
+        success: true,
+        message: 'Email sent successfully!'
+      }
+    } catch (error) {
+      console.error('Error sending email:', error)
+      return {
+        success: false,
+        message: 'Failed to send email. Please try again later.'
+      }
+    }
+  }
+
   const onSubmit = async (data: any) => {
     const formData = new FormData()
     formData.append('nombre', data.nombre)
@@ -34,10 +70,10 @@ export default function ContactForm() {
 
     const result = await sendEmail(formData)
     if (result.success) {
-      setStatus('Email sent successfully!')
+      setStatus('Email enviado!')
       setMessageType('success')
     } else {
-      setStatus('Failed to send email.')
+      setStatus('Email fallo')
       setMessageType('error')
     }
 
@@ -113,7 +149,11 @@ export default function ContactForm() {
         autoHideDuration={6000}
         onClose={handleCloseSnackbar}
       >
-        <Alert onClose={handleCloseSnackbar} severity={messageType}>
+        <Alert
+          onClose={handleCloseSnackbar}
+          severity={messageType}
+          sx={{ '& .MuiAlert-message': { typography: 'body1' } }}
+        >
           {status}
         </Alert>
       </Snackbar>
