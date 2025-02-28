@@ -13,21 +13,21 @@ export default function HeaderTitle() {
       />
       <Stack spacing={0}>
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{
             color: 'black',
             lineHeight: '1em',
             fontWeight: 700,
-            fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' }
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' }
           }}
         >
           MARCELA
         </Typography>
         <Typography
-          variant="h2"
+          variant="h3"
           sx={{
             color: 'black',
-            fontSize: { xs: '2rem', sm: '3rem', md: '3.75rem' },
+            fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
             lineHeight: '1em'
           }}
         >
