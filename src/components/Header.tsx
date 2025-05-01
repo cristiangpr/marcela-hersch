@@ -43,15 +43,15 @@ export default function Header() {
       ]
     },
     {
-      title: 'Presentaciones 2020 - 2022',
+      title: 'Trayectoria',
       items: [
-        { name: '2022', path: '/presentaciones/2022' },
+        { name: 'Presentaciones', path: '/presentaciones/pres-1' },
         {
-          name: 'Homenaje a Beethoven 2020-2021',
+          name: 'Premios y Distinciones',
           path: '/presentaciones/beethoven'
         },
         {
-          name: 'Programa de Mano Homenaje a Beethoven',
+          name: 'Actividad Como Docente en el Conservatorio Nacional de Música',
           path: '/presentaciones/programa'
         }
       ]
