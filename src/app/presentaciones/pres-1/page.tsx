@@ -1,9 +1,9 @@
 import { createClient } from '../../../utils/supabase/server'
-import { Button, Container, Stack, Typography } from '@mui/material'
+import { Button, Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
-import { Titulo } from '@/interfaces'
+//import { Titulo } from '@/interfaces'
 import Link from 'next/link'
 
 // This is a Server Component, it runs server-side.
@@ -26,7 +26,7 @@ export default async function VeintidosPage() {
   const imageUrls: string[] = data.map((file) => {
     return supabase.storage.from(bucket).getPublicUrl(file.name).data.publicUrl // Get the public URL for each file
   })
-  const titulos: Titulo[] = [
+  /*const titulos: Titulo[] = [
     {
       titulo: 'Embajada de Del Río, Texas, EUA',
       subTitulo: '7 de mayo de 2022'
@@ -55,7 +55,7 @@ export default async function VeintidosPage() {
       titulo: 'Centro de Encuentros y Diálogos Hueyapan, Morelos',
       subTitulo: '10 de Diciembre de 2022'
     }
-  ]
+  ]*/
 
   return (
     <Container
