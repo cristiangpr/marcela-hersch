@@ -16,7 +16,7 @@ export default async function VeintidosPage() {
   // Fetch the list of files from the bucket
   const { data, error } = await supabase.storage
     .from(bucket)
-    .list('', { limit: 9 })
+    .list('', { limit: 8 })
   console.log('Supabase response data:', data)
   console.log('Supabase response error:', error)
 
