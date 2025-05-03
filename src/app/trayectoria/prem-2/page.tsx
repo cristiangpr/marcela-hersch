@@ -1,18 +1,22 @@
 import { createClient } from '../../../utils/supabase/server'
-import { Button, Container, Link, Typography } from '@mui/material'
+import { Button, Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
+//import { Titulo } from '@/interfaces'
+import Link from 'next/link'
 import SelectedImageTrigger from '@/components/SelectedImageTrigger'
 
 // This is a Server Component, it runs server-side.
-export default async function Galeria() {
+export default async function PremiosPage() {
   const supabase = await createClient()
 
-  const bucket = 'galeria'
+  const bucket = 'prem-2'
 
   // Fetch the list of files from the bucket
-  const { data, error } = await supabase.storage.from(bucket).list()
+  const { data, error } = await supabase.storage
+    .from(bucket)
+    .list('', { limit: 9 })
   console.log('Supabase response data:', data)
   console.log('Supabase response error:', error)
 
@@ -23,6 +27,36 @@ export default async function Galeria() {
   const imageUrls: string[] = data.map((file) => {
     return supabase.storage.from(bucket).getPublicUrl(file.name).data.publicUrl // Get the public URL for each file
   })
+  /*const titulos: Titulo[] = [
+    {
+      titulo: 'Embajada de Del Río, Texas, EUA',
+      subTitulo: '7 de mayo de 2022'
+    },
+    {
+      titulo: 'Estudio - Foro - Hersch Cuernavaca, Morelos',
+      subTitulo: '28 de mayo de 2022'
+    },
+    {
+      titulo: 'Auditorio de la Reforma Puebla',
+      subTitulo: '10 de junio de 2022'
+    },
+    {
+      titulo: 'Alcázar del Castillo de Chapultepec, CDMX',
+      subTitulo: '16 de Julio de 2022'
+    },
+    {
+      titulo: 'Estudio - Foro - Hersch Cuernavaca, Morelos',
+      subTitulo: '24 y 26 de Noviembre de 2022'
+    },
+    {
+      titulo: 'Estudio - Foro - Hersch Cuernavaca, Morelos',
+      subTitulo: '24 y 26 de Noviembre de 2022'
+    },
+    {
+      titulo: 'Centro de Encuentros y Diálogos Hueyapan, Morelos',
+      subTitulo: '10 de Diciembre de 2022'
+    }
+  ]*/
 
   return (
     <Container
@@ -31,8 +65,8 @@ export default async function Galeria() {
         bgcolor: 'background.default'
       }}
     >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
-        <Typography variant="h4">Galeria</Typography>
+      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
+        <Typography variant="h4">Premios y Distinciones Pagina 2</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>
@@ -40,15 +74,15 @@ export default async function Galeria() {
                 container
                 justifyContent="center"
                 textAlign="center"
-                key={url}
-                size={{ xs: 12, md: 6, lg: 4 }}
-                paddingX={{ xs: 0, sm: 2 }}
-                paddingY={2}
+                key={url + 'grid'}
+                size={{ md: 4, sm: 6, xs: 12 }}
+                padding={3}
               >
+                {' '}
                 <SelectedImageTrigger
                   images={imageUrls}
                   startingIndex={index}
-                  isText={false}
+                  isText={true}
                 >
                   <Image
                     key={url}
@@ -68,14 +102,25 @@ export default async function Galeria() {
           <Box
             sx={{
               display: 'flex', // Enables flexbox
-              justifyContent: 'center', // Centers horizontally
+              justifyContent: 'space-around', // Centers horizontally
               alignItems: 'center', // Centers vertically (optional)
               width: '100%', // Ensures full width
               mt: 4 // Adds margin to separate from images
             }}
           >
-            <Button variant="outlined" component={Link} href="/galeria/fotos-2">
-              Pagina 2
+            <Button
+              variant="outlined"
+              component={Link}
+              href="/trayectoria/prem-1"
+            >
+              Pagina 1
+            </Button>
+            <Button
+              variant="outlined"
+              component={Link}
+              href="/trayectoria/prem-3"
+            >
+              Pagina 3
             </Button>
           </Box>
         </Grid>

@@ -3,6 +3,7 @@ import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
+import SelectedImageTrigger from '@/components/SelectedImageTrigger'
 
 // This is a Server Component, it runs server-side.
 export default async function Programa() {
@@ -48,17 +49,23 @@ export default async function Programa() {
                   size={{ xs: 12, sm: 6 }}
                   padding={2}
                 >
-                  <Image
-                    key={index}
-                    src={url}
-                    alt={`Image ${index}`}
-                    style={{
-                      width: '100%',
-                      height: 'auto'
-                    }}
-                    width={500}
-                    height={300}
-                  />
+                  <SelectedImageTrigger
+                    images={imageUrls}
+                    startingIndex={index}
+                    isText={false}
+                  >
+                    <Image
+                      key={url}
+                      src={url}
+                      alt={`Image ${index}`}
+                      style={{
+                        width: '100%',
+                        height: 'auto'
+                      }}
+                      width={500}
+                      height={300}
+                    />
+                  </SelectedImageTrigger>
                 </Grid>
               </>
             ))}

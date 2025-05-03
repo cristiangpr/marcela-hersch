@@ -3,6 +3,7 @@ import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
+import SelectedImageTrigger from '@/components/SelectedImageTrigger'
 
 const info: string[] = [
   'Cuartetos para piano, sitar, tanpura y tabla, en el que logra la fusión de las dos grandes vertientes de la música clásica del mundo: la música clásica de la India y la música clásica de occidente.',
@@ -46,7 +47,7 @@ export default async function Discografia() {
         <Typography padding={5} variant="h4">
           Disocografia
         </Typography>
-        <Grid container justifyContent="center" sx={{ pointerEvents: 'none' }}>
+        <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>
               <Grid
@@ -58,13 +59,23 @@ export default async function Discografia() {
                 paddingX={2}
                 paddingY={4}
               >
-                <Image
-                  key={url}
-                  src={url}
-                  alt={`Image ${index}`}
-                  width={500}
-                  height={315}
-                />
+                <SelectedImageTrigger
+                  images={imageUrls}
+                  startingIndex={index}
+                  isText={false}
+                >
+                  <Image
+                    key={url}
+                    src={url}
+                    alt={`Image ${index}`}
+                    width={500}
+                    height={315}
+                    style={{
+                      width: '100%',
+                      height: 'auto'
+                    }}
+                  />
+                </SelectedImageTrigger>
                 <Typography
                   marginTop={2}
                   fontSize={'xs'}

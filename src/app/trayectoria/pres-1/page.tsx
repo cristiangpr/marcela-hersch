@@ -5,6 +5,7 @@ import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
 //import { Titulo } from '@/interfaces'
 import Link from 'next/link'
+import SelectedImageTrigger from '@/components/SelectedImageTrigger'
 
 // This is a Server Component, it runs server-side.
 export default async function VeintidosPage() {
@@ -77,17 +78,23 @@ export default async function VeintidosPage() {
                 size={{ md: 4, sm: 6, xs: 12 }}
                 padding={3}
               >
-                <Image
-                  key={url}
-                  src={url}
-                  alt={`Image ${index}`}
-                  style={{
-                    width: '100%',
-                    height: 'auto'
-                  }}
-                  width={500}
-                  height={300}
-                />
+                <SelectedImageTrigger
+                  images={imageUrls}
+                  startingIndex={index}
+                  isText={false}
+                >
+                  <Image
+                    key={url}
+                    src={url}
+                    alt={`Image ${index}`}
+                    style={{
+                      width: '100%',
+                      height: 'auto'
+                    }}
+                    width={500}
+                    height={300}
+                  />
+                </SelectedImageTrigger>
               </Grid>
             </>
           ))}
@@ -103,7 +110,7 @@ export default async function VeintidosPage() {
             <Button
               variant="outlined"
               component={Link}
-              href="/presentaciones/pres-2"
+              href="/trayectoria/pres-2"
             >
               Pagina 2
             </Button>

@@ -45,14 +45,14 @@ export default function Header() {
     {
       title: 'Trayectoria',
       items: [
-        { name: 'Presentaciones', path: '/presentaciones/pres-1' },
+        { name: 'Presentaciones', path: '/trayectoria/pres-1' },
         {
           name: 'Premios y Distinciones',
-          path: '/presentaciones/beethoven'
+          path: '/trayectoria/prem-1'
         },
         {
           name: 'Actividad Como Docente en el Conservatorio Nacional de Música',
-          path: '/presentaciones/programa'
+          path: '/trayectoria/docente'
         }
       ]
     },
@@ -68,7 +68,8 @@ export default function Header() {
       items: [
         { name: 'Fotos', path: '/galeria/fotos' },
 
-        { name: 'Prensa', path: '/galeria/prensa' }
+        { name: 'Prensa', path: '/galeria/prensa' },
+        { name: 'Programa de Mano', path: '/galeria/programa' }
       ]
     },
     {

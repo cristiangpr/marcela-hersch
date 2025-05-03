@@ -5,12 +5,13 @@ import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
 //import { Titulo } from '@/interfaces'
 import Link from 'next/link'
+import SelectedImageTrigger from '@/components/SelectedImageTrigger'
 
 // This is a Server Component, it runs server-side.
 export default async function VeintidosPage() {
   const supabase = await createClient()
 
-  const bucket = 'presentaciones-2'
+  const bucket = 'presentaciones-3'
 
   // Fetch the list of files from the bucket
   const { data, error } = await supabase.storage
@@ -65,7 +66,7 @@ export default async function VeintidosPage() {
       }}
     >
       <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
-        <Typography variant="h4">Presentaciones Pagina 2</Typography>
+        <Typography variant="h4">Presentaciones Pagina 3</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>
@@ -77,17 +78,23 @@ export default async function VeintidosPage() {
                 size={{ md: 4, sm: 6, xs: 12 }}
                 padding={3}
               >
-                <Image
-                  key={url}
-                  src={url}
-                  alt={`Image ${index}`}
-                  style={{
-                    width: '100%',
-                    height: 'auto'
-                  }}
-                  width={500}
-                  height={300}
-                />
+                <SelectedImageTrigger
+                  images={imageUrls}
+                  startingIndex={index}
+                  isText={false}
+                >
+                  <Image
+                    key={url}
+                    src={url}
+                    alt={`Image ${index}`}
+                    style={{
+                      width: '100%',
+                      height: 'auto'
+                    }}
+                    width={500}
+                    height={300}
+                  />
+                </SelectedImageTrigger>
               </Grid>
             </>
           ))}
@@ -103,9 +110,16 @@ export default async function VeintidosPage() {
             <Button
               variant="outlined"
               component={Link}
-              href="/presentaciones/pres-1"
+              href="/trayectoria/pres-2"
             >
-              Pagina 1
+              Pagina 2
+            </Button>
+            <Button
+              variant="outlined"
+              component={Link}
+              href="/trayectoria/pres-4"
+            >
+              Pagina 4
             </Button>
           </Box>
         </Grid>
