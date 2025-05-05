@@ -33,6 +33,7 @@ export default async function Galeria() {
     >
       <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         <Typography variant="h4">Galeria</Typography>
+        <Typography>Haz click en al imagen para grandar</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>

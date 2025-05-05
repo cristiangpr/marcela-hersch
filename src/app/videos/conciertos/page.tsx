@@ -4,6 +4,17 @@ import Grid from '@mui/material/Grid2'
 import { getYouTubeEmbedUrls } from '@/utils/functions'
 
 const urls: string[] = [
+  'https://youtu.be/f1clz9RAfZE',
+  'https://youtu.be/6Pj6-22XFJQ',
+  'https://youtu.be/v1S89uq6k4s',
+  'https://youtu.be/Uf_yhLqTdfg',
+  'https://youtu.be/U3ZP1Yfbfao',
+  'https://youtu.be/8cCw7yKO7pI',
+  'https://youtu.be/vLiMZabxPlA',
+  'https://youtu.be/JAOrwLRhcLE',
+  'https://youtu.be/xh33pCJ8wqE',
+  'https://youtu.be/woML2W7D3-Y',
+  'https://youtu.be/0-SmHZF-pO0',
   'https://youtu.be/YZmmC1L8gaM?si=OBU0umzYF1NPkeG4',
   'https://youtu.be/4fzpMI09WAo?si=TyGWtlUtPkA1xDFO',
   'https://youtu.be/IR3uq5_rAhg?si=iFE-fNF-QMEqBkRl',

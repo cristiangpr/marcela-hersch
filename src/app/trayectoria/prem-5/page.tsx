@@ -67,6 +67,7 @@ export default async function PremiosPage() {
     >
       <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
         <Typography variant="h4">Premios y Distinciones Pagina 5</Typography>
+        <Typography>Haz click en al imagen para grandar</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>

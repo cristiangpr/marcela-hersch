@@ -47,6 +47,7 @@ export default async function Discografia() {
         <Typography padding={5} variant="h4">
           Disocografia
         </Typography>
+        <Typography>Haz click en al imagen para grandar</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>

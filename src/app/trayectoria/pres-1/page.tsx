@@ -16,7 +16,7 @@ export default async function VeintidosPage() {
   // Fetch the list of files from the bucket
   const { data, error } = await supabase.storage
     .from(bucket)
-    .list('', { limit: 9 })
+    .list('', { limit: 11 })
   console.log('Supabase response data:', data)
   console.log('Supabase response error:', error)
 
@@ -67,6 +67,7 @@ export default async function VeintidosPage() {
     >
       <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
         <Typography variant="h4">Presentaciones Pagina 1</Typography>
+        <Typography>Haz click en al imagen para grandar</Typography>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>
