@@ -6,13 +6,8 @@ import Link from 'next/link'
 
 export default function Venta() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
+    <Container maxWidth="xl">
+      <Box sx={{ width: '100%' }} padding={5}>
         {' '}
         <Typography variant="h5" color="text.secondary">
           Ecucha en tu plataforma favorita

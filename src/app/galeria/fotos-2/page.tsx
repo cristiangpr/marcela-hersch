@@ -25,13 +25,7 @@ export default async function Galeria2() {
   })
 
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default',
-        width: '100%'
-      }}
-    >
+    <Container maxWidth="xl">
       <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={8}>
         <Typography variant="h4">Galeria 2</Typography>
         <Typography>Haz click en al imagen para grandar</Typography>

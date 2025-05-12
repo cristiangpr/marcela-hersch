@@ -73,13 +73,8 @@ const items: Item[] = [
 // This is a Server Component, it runs server-side.
 export default async function VideosTesis() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
+    <Container maxWidth="xl">
+      <Box sx={{ width: '100%' }} padding={5}>
         <Stack spacing={1}>
           <Typography variant="h4">Anexo A de la Tesis</Typography>
           <Typography variant="h4">

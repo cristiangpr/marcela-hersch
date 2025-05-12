@@ -59,13 +59,8 @@ export default async function VeintidosPage() {
   ]
 */
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
+    <Container maxWidth="xl">
+      <Box sx={{ width: '100%' }} padding={5}>
         <Typography variant="h4">Presentaciones Pagina 4</Typography>
         <Typography>Haz click en al imagen para grandar</Typography>
         <Grid container justifyContent="center">

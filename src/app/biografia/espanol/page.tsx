@@ -6,12 +6,7 @@ import Image from 'next/image'
 
 export default function Espanol() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
+    <Container maxWidth="xl">
       <Box
         sx={{
           display: 'flex',
@@ -54,18 +49,16 @@ export default function Espanol() {
           <Stack spacing={1}>
             <Box
               sx={{
-                width: '100%',
-                maxWidth: { xs: '300px', sm: '600px' },
+                width: { xs: '300px', sm: '500px' },
                 position: 'relative'
               }}
             >
               <Image
                 style={{
                   width: '100%',
-                  height: 'auto',
-                  objectFit: 'contain'
+                  height: 'auto'
                 }}
-                width={600}
+                width={800}
                 height={550}
                 alt="image"
                 src={'/espanol.avif'}

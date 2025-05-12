@@ -32,13 +32,8 @@ export default async function Conciertos() {
   const embedUrls = getYouTubeEmbedUrls(urls)
 
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }} padding={5}>
+    <Container maxWidth="xl">
+      <Box sx={{ width: '100%' }} padding={5}>
         <Typography variant="h4">Conciertos</Typography>
         <Grid container justifyContent="center">
           {embedUrls &&

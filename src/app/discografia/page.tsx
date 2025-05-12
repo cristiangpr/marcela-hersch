@@ -37,17 +37,18 @@ export default async function Discografia() {
 
   return (
     <Container
+      maxWidth="xl"
       sx={{
-        bgcolor: 'background.default',
-
-        paddingBottom: 30
+        paddingBottom: 50
       }}
     >
-      <Box sx={{ bgcolor: 'background.default', width: '100%' }}>
-        <Typography padding={5} variant="h4">
+      <Box paddingX={{ xs: 2, sm: 4, md: 8 }} sx={{ textAlign: 'left', mt: 4 }}>
+        <Typography paddingY={2} variant="h4">
           Disocografia
         </Typography>
         <Typography>Haz click en al imagen para grandar</Typography>
+      </Box>
+      <Box paddingX={{ xs: 2, sm: 4, md: 8 }}>
         <Grid container justifyContent="center">
           {imageUrls.map((url, index) => (
             <>

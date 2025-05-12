@@ -4,12 +4,7 @@ import Image from 'next/image'
 
 export default function PortadaTesis() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
+    <Container maxWidth="xl">
       <Box
         sx={{
           display: 'flex',

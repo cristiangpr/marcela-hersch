@@ -43,6 +43,9 @@ const theme = createTheme({
     body2: {
       fontFamily: cursive.style.fontFamily,
       fontSize: 18
+    },
+    subtitle2: {
+      fontSize: 20
     }
   }
 })

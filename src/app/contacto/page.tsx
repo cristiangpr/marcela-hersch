@@ -6,12 +6,7 @@ import Image from 'next/image'
 
 export default function Contacto() {
   return (
-    <Container
-      maxWidth="lg"
-      sx={{
-        bgcolor: 'background.default'
-      }}
-    >
+    <Container maxWidth="xl">
       <Box paddingX={{ xs: 2, sm: 4, md: 8 }} sx={{ textAlign: 'left', mt: 4 }}>
         <Typography variant="h3">Contacto</Typography>
       </Box>
