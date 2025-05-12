@@ -6,7 +6,7 @@ import Image from 'next/image'
 export default function Home() {
   return (
     <Container
-      maxWidth="lg"
+      maxWidth="xl"
       sx={{
         bgcolor: 'background.default',
         px: { xs: 2, sm: 3, md: 4 } // Responsive padding
@@ -100,19 +100,13 @@ export default function Home() {
             }}
           >
             <Stack spacing={{ xs: 6, md: 10 }}>
-              <Typography
-                color="text.secondary"
-                sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}
-              >
+              <Typography color="text.secondary">
                 Marcela Hersch tiene una sólida formación como pianista
                 concertista. Su preparación como compositora la ha llevado a
                 hacerse un camino propio en el que incorpora diferentes estilos
                 musicales en el que crea sus obras con libertad
               </Typography>
-              <Typography
-                color="text.primary"
-                sx={{ fontSize: { xs: '0.9rem', sm: '1rem' } }}
-              >
+              <Typography color="text.primary">
                 Marcela Hersch has a solid concert pianist education, and has
                 trained herself as a composer in a nonacademic way which has led
                 her to freely walk in that ambience creating a unique musical

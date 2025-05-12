@@ -39,6 +39,7 @@ const theme = createTheme({
   },
   typography: {
     fontFamily: roboto.style.fontFamily,
+    fontSize: 16,
     body2: {
       fontFamily: cursive.style.fontFamily,
       fontSize: 18

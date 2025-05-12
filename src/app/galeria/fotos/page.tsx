@@ -26,7 +26,7 @@ export default async function Galeria() {
 
   return (
     <Container
-      maxWidth="lg"
+      maxWidth="xl"
       sx={{
         bgcolor: 'background.default'
       }}

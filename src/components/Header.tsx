@@ -99,7 +99,7 @@ export default function Header() {
     }
 
   return (
-    <Container>
+    <Container maxWidth="xl">
       <AppBar
         position="static"
         sx={{
@@ -114,7 +114,7 @@ export default function Header() {
             justifyContent: 'space-between',
             bgcolor: 'background.default',
             boxShadow: 'none',
-            marginLeft: { sm: 0, md: 6 }
+            marginX: { sm: 0, md: 6 }
           }}
         >
           <HeaderTitle />
@@ -191,7 +191,6 @@ export default function Header() {
                   sx={{
                     color: `text.primary`
                   }}
-                  fontSize={'0.8rem'}
                 >
                   Inicio
                 </Typography>
@@ -223,7 +222,6 @@ export default function Header() {
                   sx={{
                     color: `text.primary`
                   }}
-                  fontSize={'0.8rem'}
                 >
                   {menu.title}
                 </Typography>
