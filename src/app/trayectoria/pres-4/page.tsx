@@ -9,7 +9,7 @@ import SelectedImageTrigger from '@/components/SelectedImageTrigger'
 import { getImageUrls } from '@/app/actions/getImages'
 
 // This is a Server Component, it runs server-side.
-export default async function PremiosPage() {
+export default async function PresentacionesPage4() {
   const bucket = 'presentaciones-4'
   const { imageUrls, error } = await getImageUrls(bucket)
 

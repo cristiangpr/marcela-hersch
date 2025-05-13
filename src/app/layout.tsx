@@ -6,6 +6,7 @@ import theme from '@/theme'
 import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import ScrollToTop from '@/components/ScrollToTop'
 
 export default function RootLayout(props: { children: React.ReactNode }) {
   return (
@@ -16,6 +17,7 @@ export default function RootLayout(props: { children: React.ReactNode }) {
           <ThemeProvider theme={theme}>
             {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
             <CssBaseline />
+            <ScrollToTop />
             <Header />
             <main style={{ flexGrow: 1 }}>{props.children}</main>
             <Footer />
