@@ -13,7 +13,10 @@ import { ArrowForward, ArrowBack, Close } from '@mui/icons-material'
 import Image from 'next/image'
 
 type ImageViewerProps = {
-  fetchImages: () => Promise<string[] | undefined>
+  fetchImages: () => Promise<{
+    imageUrls: string[] | null
+    error: string | null
+  }>
   open: boolean
   onClose: () => void
   isText: boolean
@@ -28,26 +31,23 @@ export default function ImageViewer({
   const [images, setImages] = useState<string[] | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+  const [_error, setError] = useState<string | null>(null)
 
   useEffect(() => {
-    // Reset state when dialog opens
+    const getAndSetImages = async () => {
+      const { imageUrls, error } = await fetchImages()
+      if (error) {
+        setError(error)
+      }
+      if (imageUrls) {
+        setImages(imageUrls)
+      }
+    }
     if (open) {
       setLoading(true)
       setError(null)
-
-      fetchImages()
-        .then((imageUrls) => {
-          if (imageUrls) setImages(imageUrls)
-          setCurrentIndex(0)
-        })
-        .catch((err) => {
-          console.error('Failed to fetch images:', err)
-          setError('Failed to load images. Please try again.')
-        })
-        .finally(() => {
-          setLoading(false)
-        })
+      getAndSetImages()
+      setLoading(false)
     }
   }, [open, fetchImages])
 
@@ -116,11 +116,11 @@ export default function ImageViewer({
             >
               <CircularProgress color="primary" />
             </div>
-          ) : error ? (
+          ) : _error ? (
             <div
               style={{ color: 'white', padding: '20px', textAlign: 'center' }}
             >
-              {error}
+              {_error}
             </div>
           ) : images && images.length > 0 ? (
             <Image
@@ -146,7 +146,7 @@ export default function ImageViewer({
         </Box>
       </DialogContent>
 
-      {!loading && !error && images && images.length > 0 && (
+      {!loading && !_error && images && images.length > 0 && (
         <DialogActions
           sx={{
             justifyContent: 'space-between',

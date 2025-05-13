@@ -1,62 +1,21 @@
-import { createClient } from '../../../utils/supabase/server'
 import { Button, Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
-//import { Titulo } from '@/interfaces'
+
 import Link from 'next/link'
+
 import SelectedImageTrigger from '@/components/SelectedImageTrigger'
+import { getImageUrls } from '@/app/actions/getImages'
 
 // This is a Server Component, it runs server-side.
 export default async function PremiosPage() {
-  const supabase = await createClient()
-
   const bucket = 'prem-4'
-
-  // Fetch the list of files from the bucket
-  const { data, error } = await supabase.storage
-    .from(bucket)
-    .list('', { limit: 9 })
-  console.log('Supabase response data:', data)
-  console.log('Supabase response error:', error)
+  const { imageUrls, error } = await getImageUrls(bucket)
 
   if (error) {
-    return <Typography variant="h6">Error fetching images</Typography>
+    return <p className="text-red-500">Error: {error}</p>
   }
-
-  const imageUrls: string[] = data.map((file) => {
-    return supabase.storage.from(bucket).getPublicUrl(file.name).data.publicUrl // Get the public URL for each file
-  })
-  /*const titulos: Titulo[] = [
-    {
-      titulo: 'Embajada de Del Río, Texas, EUA',
-      subTitulo: '7 de mayo de 2022'
-    },
-    {
-      titulo: 'Estudio - Foro - Hersch Cuernavaca, Morelos',
-      subTitulo: '28 de mayo de 2022'
-    },
-    {
-      titulo: 'Auditorio de la Reforma Puebla',
-      subTitulo: '10 de junio de 2022'
-    },
-    {
-      titulo: 'Alcázar del Castillo de Chapultepec, CDMX',
-      subTitulo: '16 de Julio de 2022'
-    },
-    {
-      titulo: 'Estudio - Foro - Hersch Cuernavaca, Morelos',
-      subTitulo: '24 y 26 de Noviembre de 2022'
-    },
-    {
-      titulo: 'Estudio - Foro - Hersch Cuernavaca, Morelos',
-      subTitulo: '24 y 26 de Noviembre de 2022'
-    },
-    {
-      titulo: 'Centro de Encuentros y Diálogos Hueyapan, Morelos',
-      subTitulo: '10 de Diciembre de 2022'
-    }
-  ]*/
 
   return (
     <Container maxWidth="xl">
@@ -64,7 +23,7 @@ export default async function PremiosPage() {
         <Typography variant="h4">Premios y Distinciones Pagina 4</Typography>
         <Typography>Haz click en al imagen para grandar</Typography>
         <Grid container justifyContent="center">
-          {imageUrls.map((url, index) => (
+          {imageUrls?.map((url, index) => (
             <>
               <Grid
                 container

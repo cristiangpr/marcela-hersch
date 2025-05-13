@@ -1,9 +1,9 @@
-import { createClient } from '@/utils/supabase/server'
 import { Container, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
 import Grid from '@mui/material/Grid2'
 import SelectedImageTrigger from '@/components/SelectedImageTrigger'
+import { getImageUrls } from '../actions/getImages'
 
 const info: string[] = [
   'Cuartetos para piano, sitar, tanpura y tabla, en el que logra la fusión de las dos grandes vertientes de la música clásica del mundo: la música clásica de la India y la música clásica de occidente.',
@@ -18,22 +18,14 @@ const info: string[] = [
 
 // This is a Server Component, it runs server-side.
 export default async function Discografia() {
-  const supabase = await createClient()
-
   const bucket = 'portadas-discos'
 
   // Fetch the list of files from the bucket
-  const { data, error } = await supabase.storage.from(bucket).list()
-  console.log('Supabase response data:', data)
-  console.log('Supabase response error:', error)
+  const { imageUrls, error } = await getImageUrls(bucket)
 
   if (error) {
-    return <Typography variant="h6">Error fetching images</Typography>
+    return <p className="text-red-500">Error: {error}</p>
   }
-
-  const imageUrls: string[] = data.map((file) => {
-    return supabase.storage.from(bucket).getPublicUrl(file.name).data.publicUrl // Get the public URL for each file
-  })
 
   return (
     <Container
@@ -50,7 +42,7 @@ export default async function Discografia() {
       </Box>
       <Box paddingX={{ xs: 2, sm: 4, md: 8 }}>
         <Grid container justifyContent="center">
-          {imageUrls.map((url, index) => (
+          {imageUrls?.map((url, index) => (
             <>
               <Grid
                 container
