@@ -4,8 +4,10 @@ import Grid from '@mui/material/Grid2'
 import { getYouTubeEmbedUrls } from '@/utils/functions'
 
 const urls: string[] = [
+  'https://www.youtube.com/watch?v=koNKbCqTFaU',
+  'https://youtu.be/5H60rYl5npQ',
+  'https://youtu.be/DgEOrYxpsVk',
   'https://youtu.be/f1clz9RAfZE',
-  'https://youtu.be/6Pj6-22XFJQ',
   'https://youtu.be/v1S89uq6k4s',
   'https://youtu.be/Uf_yhLqTdfg',
   'https://youtu.be/U3ZP1Yfbfao',
@@ -14,7 +16,6 @@ const urls: string[] = [
 
   'https://youtu.be/xh33pCJ8wqE',
   'https://youtu.be/woML2W7D3-Y',
-  'https://youtu.be/0-SmHZF-pO0',
   'https://youtu.be/YZmmC1L8gaM?si=OBU0umzYF1NPkeG4',
   'https://youtu.be/4fzpMI09WAo?si=TyGWtlUtPkA1xDFO',
   'https://youtu.be/IR3uq5_rAhg?si=iFE-fNF-QMEqBkRl',
@@ -23,7 +24,6 @@ const urls: string[] = [
   'https://youtu.be/BaKG-JIVEwQ?si=6pbs0LVcPI-jnG1O',
   'https://youtu.be/6zWNbYejpkc?si=uZwnYADLceifayO2',
   'https://youtu.be/UwKpFswN2lM?si=uFeQFsha7jFsOK5M',
-  'https://youtu.be/w6IhVnHqZk8?si=6GxxEXyuXCgJoPia',
   'https://youtu.be/xh33pCJ8wqE?si=yf7OQCums247xqFN'
 ]
 

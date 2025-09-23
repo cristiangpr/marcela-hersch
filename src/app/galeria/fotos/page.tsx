@@ -28,7 +28,11 @@ export default async function Galeria() {
                 justifyContent="center"
                 textAlign="center"
                 key={url}
-                size={{ xs: 12, md: 6, lg: 4 }}
+                size={
+                  index === 3 || index === 4
+                    ? { xs: 12, md: 6, lg: 6 } // second row → 2 items
+                    : { xs: 12, md: 6, lg: 4 } // default → 3 items
+                }
                 paddingX={{ xs: 0, sm: 2 }}
                 paddingY={2}
               >
