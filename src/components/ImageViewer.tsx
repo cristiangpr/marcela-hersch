@@ -20,13 +20,15 @@ type ImageViewerProps = {
   open: boolean
   onClose: () => void
   isText: boolean
+  isModal: boolean
 }
 
 export default function ImageViewer({
   fetchImages,
   open,
   onClose,
-  isText
+  isText,
+  isModal
 }: ImageViewerProps) {
   const [images, setImages] = useState<string[] | null>(null)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -68,8 +70,8 @@ export default function ImageViewer({
     <Dialog
       open={open}
       onClose={onClose}
-      maxWidth="lg"
-      fullScreen
+      maxWidth={isModal ? false : 'lg'}
+      fullScreen={!isModal}
       PaperProps={{
         sx: {
           position: 'relative',
@@ -96,7 +98,7 @@ export default function ImageViewer({
         <Box
           style={{
             width: '100%',
-            height: '95vh',
+            height: isModal ? 'auto' : '95vh',
             position: 'relative',
             display: 'flex',
             justifyContent: 'center',
@@ -122,31 +124,28 @@ export default function ImageViewer({
             >
               {_error}
             </div>
-          ) : images && images.length > 0 ? (
-            <Image
-              src={images[currentIndex]}
-              alt={`Image ${currentIndex + 1}`}
-              style={{
-                maxWidth: '100%',
-                maxHeight: '100%',
-                objectFit: 'contain',
-                transform: isText ? 'scale(1.12)' : 'scale(1.05)'
-              }}
-              width={1000}
-              height={800}
-              priority
-            />
           ) : (
-            <div
-              style={{ color: 'white', padding: '20px', textAlign: 'center' }}
-            >
-              No images available
-            </div>
+            images &&
+            images.length > 0 && (
+              <Image
+                src={images[currentIndex]}
+                alt={`Image ${currentIndex + 1}`}
+                style={{
+                  maxWidth: '100%',
+                  maxHeight: '100%',
+                  objectFit: 'contain',
+                  transform: isText ? 'scale(1.12)' : 'scale(1.05)'
+                }}
+                width={isModal ? 800 : 1000}
+                height={isModal ? 600 : 800}
+                priority
+              />
+            )
           )}
         </Box>
       </DialogContent>
 
-      {!loading && !_error && images && images.length > 0 && (
+      {!loading && !_error && images && images.length > 0 && !isModal && (
         <DialogActions
           sx={{
             justifyContent: 'space-between',

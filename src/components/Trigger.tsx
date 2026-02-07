@@ -40,6 +40,7 @@ export default function GalleryTrigger({
         open={isOpen}
         onClose={() => setIsOpen(false)}
         isText={isText}
+        isModal={false}
       />
     </>
   )

@@ -1,9 +1,20 @@
+'use client'
+import ImageViewer from '@/components/ImageViewer'
 import Paola from '@/components/Paola'
 import { Container, Stack, Typography } from '@mui/material'
 import { Box } from '@mui/material'
 import Image from 'next/image'
+import { useState } from 'react'
+import { getImageUrls } from './actions/getImages'
 
 export default function Home() {
+  const [modalOpen, setModalOpen] = useState(true)
+
+  // You can directly use the server action here
+  const fetchImages = async () => {
+    return getImageUrls('home-modal')
+  }
+
   return (
     <Container
       maxWidth="xl"
@@ -153,6 +164,13 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
+      <ImageViewer
+        fetchImages={() => fetchImages()}
+        open={modalOpen}
+        onClose={() => setModalOpen(false)}
+        isText={false}
+        isModal={true}
+      />
     </Container>
   )
 }
