@@ -84,13 +84,24 @@ export default function ImageViewer({
       }}
     >
       {isModal && images && images.length > 0 && (
-        <Box sx={{ paddingTop: 3, paddingLeft: 3 }}>
+        <Box
+          sx={{
+            position: { xs: 'absolute', md: 'relative' }, // Absolute on mobile, relative on desktop
+            top: { xs: 56, md: 0 }, // Position below close button on mobile only
+            left: { xs: 0, md: 'auto' },
+            right: { xs: 0, md: 'auto' },
+            marginTop: { xs: 0, md: 2 }, // Add margin only on desktop
+            paddingX: { xs: 2, md: 3 },
+            paddingY: { xs: 1, md: 0 },
+            zIndex: 1
+          }}
+        >
           <Typography color="white">
             Próximo evento: Domingo 22 de febrero a las 12 del día
           </Typography>
-          <a href="https://maps.app.goo.gl/uB65c1b3QHeV6rLi8" target="blank">
+          <a href="https://maps.app.goo.gl/HKNabeLzYbNgtgfEA" target="blank">
             {' '}
-            <Typography>Ex Hacienda de Cortés, Cuernavaca</Typography>
+            <Typography>Hotel y Spa Hacienda de Cortés, Cuernavaca</Typography>
           </a>
         </Box>
       )}
