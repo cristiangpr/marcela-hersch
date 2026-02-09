@@ -6,7 +6,8 @@ import {
   DialogContent,
   IconButton,
   CircularProgress,
-  Box
+  Box,
+  Typography
 } from '@mui/material'
 import { useState, useEffect } from 'react'
 import { ArrowForward, ArrowBack, Close } from '@mui/icons-material'
@@ -82,6 +83,17 @@ export default function ImageViewer({
         }
       }}
     >
+      {isModal && images && images.length > 0 && (
+        <Box sx={{ paddingTop: 3, paddingLeft: 3 }}>
+          <Typography color="white">
+            Próximo evento: Domingo 22 de febrero a las 12 del día
+          </Typography>
+          <a href="https://maps.app.goo.gl/uB65c1b3QHeV6rLi8" target="blank">
+            {' '}
+            <Typography>Ex Hacienda de Cortés, Cuernavaca</Typography>
+          </a>
+        </Box>
+      )}
       <IconButton
         onClick={onClose}
         sx={{
