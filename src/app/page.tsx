@@ -8,7 +8,7 @@ import { useState } from 'react'
 import { getImageUrls } from './actions/getImages'
 
 export default function Home() {
-  const [modalOpen, setModalOpen] = useState(true)
+  const [modalOpen, setModalOpen] = useState(false)
 
   // You can directly use the server action here
   const fetchImages = async () => {
@@ -164,13 +164,15 @@ export default function Home() {
           </Box>
         </Box>
       </Box>
-      <ImageViewer
-        fetchImages={() => fetchImages()}
-        open={modalOpen}
-        onClose={() => setModalOpen(false)}
-        isText={false}
-        isModal={true}
-      />
+      {false && (
+        <ImageViewer
+          fetchImages={() => fetchImages()}
+          open={modalOpen}
+          onClose={() => setModalOpen(false)}
+          isText={false}
+          isModal={true}
+        />
+      )}
     </Container>
   )
 }
